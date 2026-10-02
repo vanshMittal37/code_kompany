@@ -1,0 +1,144 @@
+/* ==========================================================================
+   IndustriesSection.module.css
+   ========================================================================== */
+
+.industriesSection {
+  background-color: var(--background);
+}
+
+/* Desktop List */
+.desktopList {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.industryRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  padding-block: var(--space-6);
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--foreground);
+  outline: none;
+  transition: opacity 300ms var(--ease), transform 300ms var(--ease);
+}
+
+.industryRow:first-child {
+  border-top: 1px solid var(--border);
+}
+
+.rowNum {
+  color: var(--muted);
+  width: 3ch;
+}
+
+.rowTitle {
+  font-size: clamp(2.25rem, 5vw, 5rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  flex-grow: 1;
+  transition: transform 300ms var(--ease), color 300ms var(--ease);
+}
+
+.rowActive .rowTitle {
+  transform: translateX(16px);
+}
+
+.rowDimmed {
+  opacity: 0.35;
+}
+
+.rowArrow {
+  color: var(--muted);
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 250ms var(--ease), transform 250ms var(--ease), color 250ms var(--ease);
+}
+
+.rowArrowActive {
+  opacity: 1;
+  color: var(--accent);
+  transform: scale(1) translate(4px, -4px);
+}
+
+/* Floating Image Card */
+.floatingCard {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 320px;
+  height: 400px;
+  z-index: 900;
+  pointer-events: none;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.85);
+  transition: opacity 300ms var(--ease);
+}
+
+.cardActive {
+  opacity: 1;
+}
+
+/* Mobile Carousel */
+.mobileCarouselWrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.swipeHint {
+  text-align: right;
+  margin-bottom: var(--space-1);
+}
+
+.carouselTrack {
+  display: flex;
+  gap: var(--space-4);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: var(--space-4);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.carouselTrack::-webkit-scrollbar {
+  display: none;
+}
+
+.carouselCard {
+  scroll-snap-align: start;
+  flex: 0 0 80vw;
+  max-width: 380px;
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--foreground);
+}
+
+.carouselContent {
+  position: absolute;
+  bottom: var(--space-5);
+  left: var(--space-5);
+  right: var(--space-5);
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.carouselTitle {
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.carouselArrow {
+  color: var(--accent);
+}

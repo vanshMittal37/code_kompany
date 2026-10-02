@@ -1,0 +1,257 @@
+/* ==========================================================================
+   AIHub.module.css — Always dark theme styling for AI Hub
+   ========================================================================== */
+
+.hubContainer {
+  width: 100%;
+  margin-top: var(--space-7);
+}
+
+/* Desktop Hub Layout */
+.desktopHub {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: var(--space-7);
+  align-items: center;
+}
+
+.diagramWrap {
+  position: relative;
+  width: 100%;
+  height: 500px;
+}
+
+.svgLines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.connLine {
+  stroke: rgba(255, 255, 255, 0.12);
+  stroke-width: 1.5;
+  stroke-dasharray: 6 6;
+  transition: stroke 300ms var(--ease), stroke-width 300ms var(--ease);
+}
+
+.connActive {
+  stroke: var(--accent);
+  stroke-width: 2.5;
+  stroke-dasharray: none;
+  animation: dashPulse 2s linear infinite;
+}
+
+/* Center Node */
+.centerNode {
+  position: absolute;
+  left: 300px;
+  top: 250px;
+  transform: translate(-50%, -50%);
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background-color: #111113;
+  border: 1.5px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-3);
+  box-shadow: 0 0 30px rgba(255, 90, 31, 0.25);
+  z-index: 2;
+}
+
+.centerPulse {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 1px solid var(--accent);
+  opacity: 0.4;
+  animation: pulseOuter 3s ease-in-out infinite alternate;
+}
+
+/* Satellite Buttons */
+.nodeBtn {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-pill);
+  background-color: #161618;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #F2F1EC;
+  cursor: pointer;
+  outline: none;
+  z-index: 3;
+  transition:
+    transform var(--dur-fast) var(--ease),
+    border-color var(--dur-fast) var(--ease),
+    box-shadow var(--dur-fast) var(--ease);
+}
+
+.nodeDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #8F8D87;
+  transition: background-color var(--dur-fast) var(--ease);
+}
+
+.nodeName {
+  font-family: var(--font-sans);
+  font-size: var(--fs-small);
+  font-weight: 600;
+}
+
+.nodeBtnActive {
+  border-color: var(--accent);
+  box-shadow: 0 0 20px rgba(255, 90, 31, 0.3);
+  transform: translate(-50%, -50%) scale(1.06);
+}
+
+.nodeBtnActive .nodeDot {
+  background-color: var(--accent);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .nodeBtn:hover {
+    border-color: var(--accent);
+  }
+}
+
+/* Detail Panel */
+.detailPanel {
+  background-color: #161618;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-lg);
+  padding: var(--space-7);
+  box-shadow: 0 30px 80px -40px rgba(0, 0, 0, 0.8);
+}
+
+.panelContent {
+  animation: fadeIn 350ms var(--ease);
+}
+
+.capTitle {
+  font-size: var(--fs-h3);
+  color: #F2F1EC;
+  margin-top: var(--space-2);
+}
+
+.capLine {
+  color: #8F8D87;
+  font-size: var(--fs-body);
+  margin-top: var(--space-2);
+}
+
+.flowWrapper {
+  margin-top: var(--space-6);
+  padding-top: var(--space-5);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.flowChain {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.flowStep {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.chip {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  padding: 6px var(--space-3);
+  border-radius: var(--radius-pill);
+  background-color: #111113;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #F2F1EC;
+}
+
+.flowArrow {
+  color: var(--accent);
+}
+
+/* Mobile Hub */
+.mobileHub {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.tabList {
+  display: flex;
+  gap: var(--space-3);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: var(--space-2);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.tabList::-webkit-scrollbar {
+  display: none;
+}
+
+.tabChip {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  font-family: var(--font-sans);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-pill);
+  background-color: #161618;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #8F8D87;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.tabChipActive {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: #0B0B0C;
+}
+
+.mobilePanel {
+  background-color: #161618;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+}
+
+.mobileFlowChain {
+  margin-top: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.mobileFlowStep {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  width: 100%;
+}
+
+@keyframes pulseOuter {
+  0% { transform: scale(1); opacity: 0.3; }
+  100% { transform: scale(1.1); opacity: 0.6; }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(6px); }
+  100% { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,48 @@
+/* ==========================================================================
+   BeliefSection.module.css
+   ========================================================================== */
+
+.beliefSection {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+.labelTag {
+  margin-bottom: var(--space-5);
+}
+
+.statement {
+  font-size: var(--fs-h1);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  max-width: 22ch;
+  margin-bottom: var(--section-space);
+  font-weight: 600;
+}
+
+.word {
+  display: inline-block;
+  transition: color 250ms var(--ease), opacity 250ms var(--ease);
+}
+
+.dimmed {
+  color: var(--muted);
+  opacity: 0.35;
+}
+
+.highlighted {
+  color: var(--foreground);
+  opacity: 1;
+}
+
+.imageContainer {
+  margin-top: var(--space-6);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .word {
+    color: var(--foreground) !important;
+    opacity: 1 !important;
+    transition: none !important;
+  }
+}

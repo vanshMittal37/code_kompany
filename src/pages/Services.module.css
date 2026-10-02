@@ -1,0 +1,306 @@
+/* ==========================================================================
+   Services.module.css
+   ========================================================================== */
+
+.servicesPage {
+  padding-top: calc(76px + var(--space-4));
+  background-color: var(--background);
+}
+
+.heroSection {
+  background-color: var(--background);
+}
+
+.topLabel {
+  margin-bottom: var(--space-4);
+}
+
+.introWrap {
+  margin-top: var(--space-4);
+}
+
+.introText {
+  color: var(--muted);
+  font-size: var(--fs-body);
+  max-width: 48ch;
+}
+
+/* 3-Image Collage Strip */
+.collageStrip {
+  margin-top: var(--space-8);
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: var(--space-5);
+  align-items: center;
+}
+
+.collageColLeft {
+  transform: translateY(20px);
+}
+
+.collageColCenter {
+  transform: translateY(-20px);
+}
+
+.collageColRight {
+  transform: translateY(20px);
+}
+
+@media (max-width: 899px) {
+  .collageStrip {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .collageColLeft,
+  .collageColRight {
+    display: none;
+  }
+
+  .collageColCenter {
+    transform: none;
+  }
+}
+
+/* Section 2 — Editorial Service Index */
+.indexSection {
+  border-top: 1px solid var(--border);
+}
+
+.desktopIndexList {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.indexRow {
+  display: grid;
+  grid-template-columns: 3ch 1fr auto;
+  gap: var(--space-6);
+  align-items: center;
+  min-height: 160px;
+  padding-block: var(--space-6);
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--foreground);
+  outline: none;
+  transition: opacity 300ms var(--ease), border-color 300ms var(--ease);
+}
+
+.indexRow:first-child {
+  border-top: 1px solid var(--border);
+}
+
+.featuredRow {
+  border-left: 3px solid var(--accent);
+  padding-left: var(--space-4);
+}
+
+.rowNum {
+  color: var(--muted);
+}
+
+.accentNum {
+  color: var(--accent);
+}
+
+.rowMiddle {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.rowTitleWrap {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  transition: transform 300ms var(--ease);
+}
+
+.rowActive .rowTitleWrap {
+  transform: translateX(16px);
+}
+
+.rowTitle {
+  font-size: clamp(2rem, 4.5vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1;
+}
+
+.rowOneLiner {
+  color: var(--muted);
+  font-size: var(--fs-body);
+  max-width: 46ch;
+}
+
+.rowRight {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.rowTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.rowArrowBtn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--foreground);
+  transition:
+    transform 250ms var(--ease),
+    background-color 250ms var(--ease),
+    border-color 250ms var(--ease),
+    color 250ms var(--ease);
+}
+
+.arrowActive {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-contrast);
+  transform: rotate(45deg);
+}
+
+.rowDimmed {
+  opacity: 0.35;
+}
+
+/* Floating Image Card */
+.floatingCard {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 340px;
+  height: 420px;
+  z-index: 900;
+  pointer-events: none;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.85);
+  transition: opacity 300ms var(--ease);
+}
+
+.cardActive {
+  opacity: 1;
+}
+
+/* Mobile Card Grid */
+.mobileCardGrid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.mobileCard {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background-color: var(--surface);
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--foreground);
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileFeaturedCard {
+  border-color: var(--accent);
+}
+
+.mobileCardContent {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.mobileCardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobileCardTitle {
+  font-size: var(--fs-h3);
+}
+
+.mobileCardText {
+  color: var(--muted);
+  font-size: var(--fs-small);
+}
+
+.mobileLinkText {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--accent);
+  margin-top: var(--space-2);
+}
+
+/* Section 3 — How We Work */
+.workMethodSection {
+  border-top: 1px solid var(--border);
+  background-color: var(--surface);
+}
+
+.methodTitle {
+  font-size: var(--fs-h2);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  max-width: 22ch;
+}
+
+.methodChipsRow {
+  margin-top: var(--space-6);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.chipStep {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.chip {
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-strong);
+  background-color: var(--background);
+}
+
+.chipArrow {
+  color: var(--accent);
+}
+
+.methodLinkWrap {
+  margin-top: var(--space-6);
+}
+
+.methodLink {
+  color: var(--foreground);
+  font-weight: 600;
+  font-size: var(--fs-small);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color var(--dur-fast) var(--ease);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .methodLink:hover {
+    color: var(--accent);
+  }
+}

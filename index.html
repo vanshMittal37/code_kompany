@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+    <!-- No-flash theme script: must run before React or any CSS painting -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('ck-theme');
+          var theme = (stored === 'light' || stored === 'dark') ? stored : 'dark';
+          document.documentElement.dataset.theme = theme;
+          var color = theme === 'dark' ? '#0B0B0C' : '#F4F2EC';
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute('content', color);
+        } catch (e) {
+          document.documentElement.dataset.theme = 'dark';
+        }
+      })();
+    </script>
+
+    <!-- Primary SEO -->
+    <title>Code Kompany — AI-Native Software Studio in Vadodara, India</title>
+    <meta name="description" content="Code Kompany is an AI-native software studio in Vadodara, India, building custom software, AI agents and digital systems that help businesses automate operations and grow." />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Preload hero dark landscape image for LCP -->
+    <link rel="preload" as="image" href="/images/hero/hero-dark-1024.webp" imagesrcset="/images/hero/hero-dark-640.webp 640w, /images/hero/hero-dark-1024.webp 1024w" imagesizes="100vw" />
+
+    <!-- Theme colour for mobile browsers -->
+    <meta name="theme-color" content="#0B0B0C" />
+
+    <!-- Google Fonts (Manrope & JetBrains Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400..700&display=swap" rel="stylesheet" />
+
+    <!-- Open Graph (full meta comes in Phase 7) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Code Kompany" />
+    <meta property="og:title" content="Code Kompany — AI-Native Software Studio in Vadodara, India" />
+    <meta property="og:description" content="We build custom software, AI agents and digital systems that help businesses automate operations and grow." />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Code Kompany",
+      "legalName": "Sahayoga Tech Pvt Ltd",
+      "url": "https://codekompany.com",
+      "logo": "https://codekompany.com/favicon.svg",
+      "description": "Code Kompany is an AI-native software studio in Vadodara, India, building custom software, AI agents and digital systems that help businesses automate operations and grow.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Vadodara",
+        "addressRegion": "Gujarat",
+        "addressCountry": "India"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "brij@codekompany.com",
+        "telephone": "+91-7574865790",
+        "contactType": "customer service"
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

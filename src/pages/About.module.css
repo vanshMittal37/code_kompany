@@ -1,0 +1,288 @@
+/* ==========================================================================
+   About.module.css
+   ========================================================================== */
+
+/* ── Hero ──────────────────────────────────────────────── */
+.hero {
+  padding-top: calc(var(--section-space) + 5rem);
+  padding-bottom: var(--section-space);
+}
+
+.eyebrow {
+  margin-bottom: var(--space-5);
+  color: var(--accent);
+}
+
+.heroTitle {
+  font-size: var(--fs-h1);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  max-width: 18ch;
+}
+
+/* ── Section labels ──────────────────────────────────────── */
+.sectionLabel {
+  display: block;
+  margin-bottom: var(--space-4);
+  color: var(--muted);
+  letter-spacing: 0.12em;
+}
+
+.sectionTitle {
+  font-size: var(--fs-h2);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: var(--space-9);
+}
+
+/* ── Definition ──────────────────────────────────────────── */
+.definition {
+  padding-bottom: var(--section-space);
+}
+
+.definitionGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+}
+
+@media (min-width: 900px) {
+  .definitionGrid {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: clamp(3rem, 6vw, 6rem);
+  }
+}
+
+.studioImageWrap {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.definitionText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.defStatement {
+  font-size: clamp(1.1rem, 1.5vw + 0.8rem, 1.35rem);
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--foreground);
+}
+
+.defBody {
+  font-size: var(--fs-body);
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.locationChip {
+  display: inline-flex;
+  padding: var(--space-2) var(--space-5);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-strong);
+  color: var(--muted);
+  width: fit-content;
+}
+
+/* ── Mindset full-bleed ──────────────────────────────────── */
+.mindsetSection {
+  position: relative;
+  overflow: hidden;
+}
+
+.mindsetImage {
+  width: 100%;
+}
+
+.mindsetOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: var(--space-9);
+}
+
+.mindsetQuote blockquote {
+  font-size: clamp(1.2rem, 2.5vw + 0.5rem, 2.5rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  color: #fff;
+  max-width: 28ch;
+}
+
+/* ── Values ──────────────────────────────────────────────── */
+.valuesSection {
+  padding-top: var(--section-space);
+  padding-bottom: var(--section-space);
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-1);
+  border-top: 1px solid var(--border);
+}
+
+@media (min-width: 640px) {
+  .valuesGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .valuesGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.valueCard {
+  padding: var(--space-7) var(--space-5);
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.valueNumber {
+  color: var(--accent);
+}
+
+.valueTitle {
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.valueBody {
+  font-size: var(--fs-body);
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+/* ── Capabilities ────────────────────────────────────────── */
+.capabilitiesSection {
+  padding-bottom: var(--section-space);
+}
+
+.capabilitiesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-9);
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .capabilitiesGrid {
+    grid-template-columns: 2fr 3fr;
+    gap: clamp(3rem, 6vw, 7rem);
+  }
+}
+
+.capLeft {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.capTitle {
+  font-size: var(--fs-h2);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.capIntro {
+  font-size: var(--fs-body);
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.capList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--border);
+}
+
+.capItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  padding: var(--space-5) 0;
+  border-bottom: 1px solid var(--border);
+  font-size: clamp(1rem, 1.2vw + 0.6rem, 1.35rem);
+  font-weight: 500;
+  transition: color var(--dur-fast) var(--ease);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .capItem:hover {
+    color: var(--accent);
+  }
+}
+
+.capIndex {
+  font-size: var(--fs-label);
+  font-weight: 700;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  min-width: 2.2rem;
+}
+
+/* ── Contact strip ───────────────────────────────────────── */
+.contactStrip {
+  padding-top: var(--space-9);
+  padding-bottom: var(--section-space);
+  border-top: 1px solid var(--border);
+}
+
+.contactRow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.emailLink {
+  font-size: clamp(1.5rem, 4vw + 0.5rem, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--foreground);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease);
+  line-height: 1.1;
+  word-break: break-all;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .emailLink:hover {
+    color: var(--accent);
+  }
+}
+
+.waRow {
+  margin-top: var(--space-3);
+}
+
+.waLink {
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--muted);
+  text-decoration: underline;
+  transition: color var(--dur-fast) var(--ease);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .waLink:hover {
+    color: var(--accent);
+  }
+}

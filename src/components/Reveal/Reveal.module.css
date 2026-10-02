@@ -1,0 +1,52 @@
+/* ==========================================================================
+   Reveal.module.css
+   ========================================================================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(var(--reveal-y, 24px));
+  transition:
+    opacity var(--dur-slow) var(--ease),
+    transform var(--dur-slow) var(--ease);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Split Reveal */
+.splitWrapper {
+  display: block;
+}
+
+.lineMask {
+  display: block;
+  overflow: hidden;
+  line-height: inherit;
+}
+
+.lineContent {
+  display: block;
+  transform: translateY(108%);
+  transition: transform var(--dur-slow) var(--ease);
+  will-change: transform;
+}
+
+.lineRevealed {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .lineContent {
+    transform: none !important;
+    transition: none !important;
+  }
+}

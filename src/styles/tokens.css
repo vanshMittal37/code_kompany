@@ -1,0 +1,108 @@
+/* ==========================================================================
+   tokens.css — Design system tokens for Code Kompany
+   Every color, radius, font-size and spacing value in the project must come
+   from here. To change the accent colour, change ONE value below.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Accent (change in ONE place only)
+   -------------------------------------------------------------------------- */
+:root {
+  --accent-color: #FF5A1F;
+  --accent: var(--accent-color);
+  --accent-contrast: #0B0B0C;
+  --accent-soft: color-mix(in srgb, var(--accent) 14%, transparent);
+}
+
+/* --------------------------------------------------------------------------
+   Dark theme (default)
+   -------------------------------------------------------------------------- */
+:root[data-theme="dark"] {
+  --background:      #0B0B0C;
+  --surface:         #111113;
+  --card:            #161618;
+  --foreground:      #F2F1EC;
+  --muted:           #8F8D87;
+  --border:          rgba(255, 255, 255, 0.09);
+  --border-strong:   rgba(255, 255, 255, 0.18);
+  --image-overlay:   linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.6));
+  --shadow:          0 30px 80px -40px rgba(0, 0, 0, 0.8);
+
+  /* Buttons */
+  --btn-primary-bg:      var(--foreground);
+  --btn-primary-fg:      var(--background);
+  --btn-secondary-bg:    transparent;
+  --btn-secondary-border: var(--border-strong);
+}
+
+/* --------------------------------------------------------------------------
+   Light theme (intentionally warm paper-gallery, NOT just inverted dark)
+   -------------------------------------------------------------------------- */
+:root[data-theme="light"] {
+  --background:      #F4F2EC;
+  --surface:         #FBFAF7;
+  --card:            #FFFFFF;
+  --foreground:      #141414;
+  --muted:           #66645E;
+  --border:          rgba(20, 20, 20, 0.10);
+  --border-strong:   rgba(20, 20, 20, 0.22);
+  --image-overlay:   linear-gradient(180deg, transparent 55%, rgba(0, 0, 0, 0.45));
+  --shadow:          0 30px 70px -45px rgba(20, 20, 20, 0.35);
+
+  /* Buttons */
+  --btn-primary-bg:      var(--foreground);
+  --btn-primary-fg:      var(--background);
+  --btn-secondary-bg:    transparent;
+  --btn-secondary-border: var(--border-strong);
+}
+
+/* --------------------------------------------------------------------------
+   Shape + Motion
+   -------------------------------------------------------------------------- */
+:root {
+  --radius-sm:   10px;
+  --radius:      18px;
+  --radius-lg:   28px;
+  --radius-pill: 999px;
+
+  --ease:      cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast:  200ms;
+  --dur:       500ms;
+  --dur-slow:  900ms;
+}
+
+/* --------------------------------------------------------------------------
+   Typography
+   -------------------------------------------------------------------------- */
+:root {
+  --font-sans: "Manrope", "Manrope Variable", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --fs-display: clamp(2.6rem, 8.5vw + 0.5rem, 9.5rem);
+  --fs-h1:      clamp(2.25rem, 5vw + 1rem, 5.75rem);
+  --fs-h2:      clamp(1.9rem, 3.6vw + 0.8rem, 4.25rem);
+  --fs-h3:      clamp(1.3rem, 1.2vw + 1rem, 2rem);
+  --fs-body:    clamp(1rem, 0.3vw + 0.95rem, 1.125rem);
+  --fs-small:   0.875rem;
+  --fs-label:   0.75rem;
+}
+
+/* --------------------------------------------------------------------------
+   Spacing + Layout
+   -------------------------------------------------------------------------- */
+:root {
+  --container:    1440px;
+  --gutter:       clamp(1.25rem, 4vw, 3rem);
+  --section-space: clamp(5rem, 11vw, 11rem);
+
+  --space-1:  0.25rem;   /*  4px */
+  --space-2:  0.5rem;    /*  8px */
+  --space-3:  0.75rem;   /* 12px */
+  --space-4:  1rem;      /* 16px */
+  --space-5:  1.5rem;    /* 24px */
+  --space-6:  2rem;      /* 32px */
+  --space-7:  2.5rem;    /* 40px */
+  --space-8:  3.5rem;    /* 56px */
+  --space-9:  5rem;      /* 80px */
+  --space-10: 8rem;      /* 128px */
+}

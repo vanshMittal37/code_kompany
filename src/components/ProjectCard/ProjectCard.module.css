@@ -1,0 +1,61 @@
+/* ==========================================================================
+   ProjectCard.module.css
+   ========================================================================== */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.imageWrap {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background-color: var(--surface);
+}
+
+.details {
+  margin-top: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.number {
+  color: var(--muted);
+}
+
+.title {
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.description {
+  color: var(--muted);
+  font-size: var(--fs-body);
+}
+
+.tagGroup {
+  margin-top: var(--space-2);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.liveLink {
+  display: inline-block;
+  margin-top: var(--space-2);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: underline;
+}

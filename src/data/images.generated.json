@@ -1,0 +1,312 @@
+{
+  "about/mindset": {
+    "widths": [
+      640,
+      1024
+    ],
+    "width": 1024,
+    "height": 1024,
+    "aspectRatio": 1,
+    "lqip": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAACwAwCdASoYABgAPwVusFArpqUisAwBcCCJZwAAW+sv8pjY+87dYAD+6+B8ECyofzrqNA+GTeL70HzbTVSsMbtiiVCeDVMxWcAKOqSgywQWdLHPAAA="
+  },
+  "about/studio": {
+    "widths": [
+      640,
+      1024
+    ],
+    "width": 1024,
+    "height": 1024,
+    "aspectRatio": 1,
+    "lqip": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAACQBACdASoYABgAPxF2slGsJySiqA1RgCIJQBdgAUbg8cIuIOOV6a/FwE3LgAAA2WlXOon2hQvfj8x8JLZbKoROgLW+8yjeM8K8RdOBxkjRuYZH0Ty/tqdbEm2kbMYs104ZQIFQltVYGwjTOuYA94rpLZeVEq9zTIKHmsfxqmqcmNgGIrnRln0f+si0AAAA"
+  },
+  "ai/ai-core-wide": {
+    "widths": [
+      640,
+      1024
+    ],
+    "width": 1024,
+    "height": 1024,
+    "aspectRatio": 1,
+    "lqip": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAAAwBACdASoYABgAPxF+tVWsJ6SpKAgBgCIJYwDG9BEcy1vv+H/E3FD5sQAA/u6OX084K9SvmVGy3WTQWOYhT9AsQL4HpIO9sAm3GR4vLqKERrs/sAAAAA=="
+  },
+  "cta/cta-ribbon": {
+    "widths": [
+      640,
+      1024
+    ],
+    "width": 1024,
+    "height": 1024,
+    "aspectRatio": 1,
+    "lqip": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAAAQBQCdASoYABgAPxFusFCsJiSjsBgMAYAiCUAYyAIdnQIss+M7/K/5pQeiz5nNd9wAAP7r6eMVTnaKakBBs6UqcuKJL0U/z/EQImgVuZu53efnkuSq1i3QEzT8XgFgAAA="
+  },
+  "cta/not-found": {
+    "widths": [
+      640,
+      1024
+    ],
+    "width": 1024,
+    "height": 1024,
+    "aspectRatio": 1,
+    "lqip": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADwAgCdASoYABgAPxF+slSsKCokKAqpgCIJZwAAOuOOAAD+7rfN4Jni+/OkdLku7xWURLLos8jl3QAA"
+  },
+  "hero/hero-dark": {
+    "widths": [
+      640,
+      1024
+    ],
+    "width": 1024,
+    "height": 1024,
+    "aspectRatio": 1,
+    "lqip": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAAAwBACdASoYABgAPxF0r1AsJqQisBgMAYAiCUAYmwKokg7D5aYkn1ffGcAA/u6IEi0mdQJmNFJURUVLZ8x5dY1sKdyO7T29T9jjcYL8SKa/xpz3ka2UrCXPLgeXH+sIggAAAA=="
+  },
+  "hero/hero-light": {
+    "widths": [
+      640,
+      1024
+    ],
+    "width": 1024,
+    "height": 1024,
+    "aspectRatio": 1,
+    "lqip": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAAAwBQCdASoYABgAPxFws1MsJaSisBgIAYAiCUAYUAHo6QyRU29x/hEhn2tGG2ROOoEMuAD+1gAIxCaPPF1pwB6nEJ2zlsskyhL6pcOIBjISJr0lgRByyuPoW2JiiGmmJttIkGnSEO/RlwQHRpv0Y4AAAAA="
+  },
+  "hero/hero-mobile-dark": {
+    "widths": [
+      640,
+      1024
+    ],
+    "width": 1024,
+    "height": 1024,
+    "aspectRatio": 1,
+    "lqip": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAAAQBQCdASoYABgAPxF2s1KsJySisBgIAYAiCUAZKYIbyha3jG/FzNqxZyuNSioqXecAAP7uj8ZgjlcpEtKLTMd9IE9BnZKxgCwT2rZ0+QGuYpdK1yB46tn+mBGST4wlgAA="
+  },
+  "hero/hero-mobile-light": {
+    "widths": [
+      640,
+      1024
+    ],
+    "width": 1024,
+    "height": 1024,
+    "aspectRatio": 1,
+    "lqip": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAAAQBQCdASoYABgAPxF6tlOsJ6UiqAqpgCIJZQDA3BEcUT//xBkDJFt4OWBmFJQNATIAAP7Wl29dVw3EXbNVXlTPhqb5BNI5dAdMsZaXfn04iCDkRORAIMUJ1iWb9aLdFeQMu/7hnUznjSGFkWgVRNJs3zJ8wXAA"
+  },
+  "industries/ecommerce": {
+    "widths": [
+      640,
+      1024
+    ],
+    "width": 1024,
+    "height": 1024,
+    "aspectRatio": 1,
+    "lqip": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAADQBACdASoYABgAPxGCuFSsKSWjKAqpgCIJQBhfAig9xYvt96s7Y8nCa2kJsQo4AAD+7Dif30R8m7LPHAeVVRzcIbyLsc48y19TTVeY62whPIIkukXJLvZZ8f/14UjwAAA="
+  },
+  "industries/growing-business": {
+    "widths": [
+      640,
+      1024
+    ],
+    "width": 1024,
+    "height": 1024,
+    "aspectRatio": 1,
+    "lqip": "data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAACQBACdASoYABgAPxF6s1QsJ6QjKAqpgCIJZQDImBEdmIuX4blM6csGnIZkkAAA/u561RPWj0d943Cy5QeEchMeB74c1EPZKEPzRQPe7VXN7OqiOMSzYT/jf/qqnqV3yAxu8dIRMFppzQ3lm4yUxYoSDIQS4v7k5UKKe64fhUA7g8OQSI6rrtJaUARORraIA+ccg8Rdx1NBNIVJMxwmEGAA"
+  },
+  "industries/healthcare": {
+    "widths": [
+      640,
+      1024
+    ],
+    "width": 1024,
+    "height": 1024,
+    "aspectRatio": 1,
+    "lqip": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAABwBACdASoYABgAPxF6sFMsJ6QiqA1RgCIJZwAAKh7AH7NPbw/nGFWrGyK3dAD+3Lh0SoBrDvpFHREd+nWXjbOW/BFTvl0UxYMohUSeN1PFlMXnrKDl9oxrzyaz00rt7jUfVtxTgAA="
+  },
+  "industries/manufacturing": {
+    "widths": [
+      640,
+      1024
+    ],
+    "width": 1024,
+    "height": 1024,
+    "aspectRatio": 1,
+    "lqip": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAADQBACdASoYABgAPxF4slIsJySisBgIAYAiCWcAzYQPRunN/jaZn/Jr1Pl3oyaYAAD+6/33ptMOJiOIP2NaVv1t/noWLSITm3B6NbDsPhCx5hvUansk3OaDS4GM/5M8gAAAAA=="
+  },
+  "industries/real-estate": {
+    "widths": [
+      640,
+      1024
+    ],
+    "width": 1024,
+    "height": 1024,
+    "aspectRatio": 1,
+    "lqip": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAAAQBQCdASoYABgAPxF2sVIsJySisBgIAYAiCWYAtRfAgNGGa0qHlcepG+VGJr+mfYgAAP7L5+r2KRz/9W4tbZS21zmy19M3rmGkeSaTma2YBQz59xB+hB+aIN7NLlwmmtLqp53Zlr6ZE9rbkBJ1z0kEQ2p/hUa6KT8HQPG9SVv83B28bDE2lCkmfxRZWyCwvAA="
+  },
+  "industries/startups": {
+    "widths": [
+      640,
+      1024
+    ],
+    "width": 1024,
+    "height": 1024,
+    "aspectRatio": 1,
+    "lqip": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAABwBQCdASoYABgAPvlsqVAqpqQit/qoAVAfCWUAz2QY3fdiaOfkhQ9Ypo8hNM1+IFMwTvQAAP7w36Y+ZNJnJ0QeFZcEuOTbjFBR5p+iJENZLx/ImL1F4IRqhq5FzQt55IUSccaUih5dQd/vlvpfW5igLQbBWpD7nQ+MOaSJGPZFkEyp7EVc2uX2bgAAAA=="
+  },
+  "intro/intro-wide": {
+    "widths": [
+      640,
+      1024
+    ],
+    "width": 1024,
+    "height": 1024,
+    "aspectRatio": 1,
+    "lqip": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAACwBACdASoYABgAPxF2slGsJySiqA1RgCIJZwDH5BBMCF+sSD6HeKfr50PMQAAAAP7lhFqS8OJcwaFyqLVCvyNn/vN3ZkdwNRjxvEmWPZ6Z020M36hz2TSCRSrAUdlPsHAeBRYoSH0qUU7YAAA="
+  },
+  "og/og-bg": {
+    "widths": [
+      640,
+      1024
+    ],
+    "width": 1024,
+    "height": 1024,
+    "aspectRatio": 1,
+    "lqip": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAAAwBACdASoYABgAPvVkqFAqpaQit+gBUB6JZQDMWDJQJZ3oEZmyd6EFqAAA/uvbV7fSILXZyoNcKF/F156nZq6JYZkHhGe44I9DFzPG4AAAAA=="
+  },
+  "projects/project-01": {
+    "widths": [
+      640,
+      1024
+    ],
+    "width": 1024,
+    "height": 1024,
+    "aspectRatio": 1,
+    "lqip": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAACwAwCdASoYABgAPxF2rlAsJ6QisBgMAYAiCWUAwzQVZCrbiN2hgAD+7lbDOQR7Pvz/SkzJNzX7XnrvvKwlKQBjxL9eDpfUtHoVV/P0Z6Y+HLMfAXKCoAAA"
+  },
+  "projects/project-02": {
+    "widths": [
+      640,
+      1024
+    ],
+    "width": 1024,
+    "height": 1024,
+    "aspectRatio": 1,
+    "lqip": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADwAwCdASoYABgAPxF6sFGsLaSisBgIAbAiCWMAxgQQ78Vrc6LQOLwAAP7r6voWKfn66gJTgQJ4j2GlPF7Py5kB/eLCI0+K5KEhLOEN8iELvrwP9GAVT9IAAAA="
+  },
+  "projects/project-03": {
+    "widths": [
+      640,
+      1024
+    ],
+    "width": 1024,
+    "height": 1024,
+    "aspectRatio": 1,
+    "lqip": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAADwAwCdASoYABgAPxF2slIsJySiqA1RgCIJZwAALmnBS7Myilfm1acgAP7o5Kyy4w3/lu2L/2OuYIoqSfpfuqWZi3Dsfdrm2hkMZhiZBVwZVjY+hB9BvWDwjgAAAA=="
+  },
+  "projects/project-04": {
+    "widths": [
+      640,
+      1024
+    ],
+    "width": 1024,
+    "height": 1024,
+    "aspectRatio": 1,
+    "lqip": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAADQBACdASoYABgAPxF+tlWsJ6SjKAgBgCIJZwAALnXukxM9l68Mu+6AdS2fd/gtAAD+6+wrevZCO/kHogtZVAxQYfS8miWwFwqwxorbH+b18Vv6c54IglL5tx3Ir1f7nqRAFFqDeFGK8ZqAFzAKNoAsoiPqiAoEzkKoRk198WWu7I8gAAA="
+  },
+  "projects/project-05": {
+    "widths": [
+      640,
+      1024
+    ],
+    "width": 1024,
+    "height": 1024,
+    "aspectRatio": 1,
+    "lqip": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAAAQBQCdASoYABgAPwVsrVArpiQisAwBcCCJYwDN/CHfY0kh7oylIyOxH0zivxUrWggAAP7lfn3AAzsOp8A3PsPdDLYQRXPc5MMA0v2QZnzi7pf6xh35RLc/aol6Yt4T3RRgH2e3fLPBR2DmzEsp+cAAAAA="
+  },
+  "projects/project-06": {
+    "widths": [
+      640,
+      1024
+    ],
+    "width": 1024,
+    "height": 1024,
+    "aspectRatio": 1,
+    "lqip": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADQBACdASoYABgAPw1srlAsJaQit/VYAYAhiWUAygAQ8NufQSw+B2UIXp69tyUp4AD+6+pHOVv4o+7xgxmQcl3r9DDrvgZ4/LjRAvVZI2gaPF5+IGfGy6MlYAA="
+  },
+  "services/ai-agents": {
+    "widths": [
+      640,
+      1024
+    ],
+    "width": 1024,
+    "height": 1024,
+    "aspectRatio": 1,
+    "lqip": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAADQBACdASoYABgAPxFssVCsJaSisBgMAYAiCWgAxvQQ795JD1FHpvPK7rl/SzVDAAD+6+r2nXY9Kt5Grk0CwDZgb6O0C9PgcULHkOtxPgpze9ZvO1Wz6rPYjnHRv7dA3V5IiAAA"
+  },
+  "services/cloud-solutions": {
+    "widths": [
+      640,
+      1024
+    ],
+    "width": 1024,
+    "height": 1024,
+    "aspectRatio": 1,
+    "lqip": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAADwBACdASoYABgAPxF0r1AsJyQisBgMAYAiCWcAxNgMNkEkvFvGYEcOu05xAvzs44AA/uv8h6B0qunxqXTu78+lFRxzCO/IEWN+z9+4z/DmEqCYuD3K9NsaDmhRHlDjRtpzdp1y94rzEhBtGAA="
+  },
+  "services/digital-transformation": {
+    "widths": [
+      640,
+      1024
+    ],
+    "width": 1024,
+    "height": 1024,
+    "aspectRatio": 1,
+    "lqip": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAADQBACdASoYABgAPxF6s1QsJ6QjKAqpgCIJZQDMWBETF7T540Xr+AA2DNzeutiVAAD+7D0qXnIuTb+Bk315s6CCRwdAE+SfIExKliAi0WEk06Idao5g5NvfU3vs5/9gwW8Wj/bP0Zjkvw6i8vf62DXjXOtSMkv+I5OfTAAA"
+  },
+  "services/ecommerce": {
+    "widths": [
+      640,
+      1024
+    ],
+    "width": 1024,
+    "height": 1024,
+    "aspectRatio": 1,
+    "lqip": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAADQAwCdASoYABgAPxGAuFUsKCUjKAgBgCIJQAAmBd7UMbOL9i5nogAA/vOujWC8P+M0GWSRU0H9zr73zOLdK9JN1qUj3YpmPt8Zf8PaFL+JklKuvzcuKI3LWSfVpBfk9fYkbChISzjkETCoYpyOONcujRpDZPnkiVWDgAAA"
+  },
+  "services/industry-solutions": {
+    "widths": [
+      640,
+      1024
+    ],
+    "width": 1024,
+    "height": 1024,
+    "aspectRatio": 1,
+    "lqip": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADQBACdASoYABgAPw1sr1AsJaQit/VYAYAhiWcAzUgQ7+EYy1oZ6iBd5wT/fhkAAAD+7nTfBW9nb8707iz5rSC4O/YLAE7Pfd0ShFWMJIGl4SNIdFx1rAAA"
+  },
+  "services/mobile-app": {
+    "widths": [
+      640,
+      1024
+    ],
+    "width": 1024,
+    "height": 1024,
+    "aspectRatio": 1,
+    "lqip": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAADwBACdASoYABgAPw1ys1AsJyUisBgMAYAhiWUAAC51pIisBlLbDoDnEXBmeOK4oAAA/u6GfyzMnX6vg/9U1twkbv4BY+LSfNRsfBjPshLfV9HEQ5qYDKzPA5THLe3bKixFpb5RzL4qTfJ2oyT0tablP0BVaa9anwAAAA=="
+  },
+  "services/mvp-development": {
+    "widths": [
+      640,
+      1024
+    ],
+    "width": 1024,
+    "height": 1024,
+    "aspectRatio": 1,
+    "lqip": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAACwBACdASoYABgAPw1qr1AsJaQit/VYAYAhiWcAy2gQ8LjNeovcaHYgkW4Ph+AAAP7ujTum+IKa7qxY/j3VdgugJ+JE+7HDffnVP42tzZrhBH+9C0/6/8o5ZX6c3RvpnGGXrfFRigPyM9NrRcoHGVtH4ZGAssQws4dpgAAA"
+  },
+  "services/software-development": {
+    "widths": [
+      640,
+      1024
+    ],
+    "width": 1024,
+    "height": 1024,
+    "aspectRatio": 1,
+    "lqip": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAAAQBACdASoYABgAPxGAuFWsKCUjKAgBgCIJZQDGQBDPvU/YhtRRMhIWAAD+6+H+2Y3J46FzTf58NADPsu5EPKgXmUhT7o1dJgEQRNFY7CkMvo8SejOEQjYqogPWhX2U4t8tO92kAAA="
+  }
+}

@@ -1,0 +1,86 @@
+/* ==========================================================================
+   SectionHeader.module.css
+   ========================================================================== */
+
+.labelTag {
+  margin-bottom: var(--space-4);
+  display: block;
+}
+
+.title {
+  font-size: var(--fs-h2);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+  max-width: 20ch;
+}
+
+.intro {
+  margin-top: var(--space-4);
+  color: var(--muted);
+  font-size: var(--fs-body);
+  max-width: 44ch;
+}
+
+.headerLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-5);
+  font-weight: 600;
+  font-size: var(--fs-small);
+  color: var(--foreground);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease);
+}
+
+.headerLink svg {
+  transition: transform var(--dur-fast) var(--ease);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .headerLink:hover {
+    color: var(--accent);
+  }
+  .headerLink:hover svg {
+    transform: translate(3px, -3px);
+  }
+}
+
+/* Left layout (stacked) */
+.leftHeader {
+  margin-bottom: var(--space-8);
+}
+
+/* Split layout (7 cols / 4 cols on desktop) */
+.splitHeader {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: clamp(1rem, 3vw, 3rem);
+  align-items: end;
+  margin-bottom: var(--space-8);
+}
+
+.splitLeft {
+  grid-column: span 7;
+}
+
+.splitRight {
+  grid-column: 9 / span 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+@media (max-width: 899px) {
+  .splitHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .splitLeft,
+  .splitRight {
+    width: 100%;
+  }
+}

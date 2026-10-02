@@ -1,0 +1,31 @@
+/* ==========================================================================
+   Tag.module.css
+   ========================================================================== */
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 4px var(--space-3);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border);
+  background-color: var(--surface);
+  color: var(--muted);
+  font-size: var(--fs-label);
+  line-height: 1;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.accent {
+  background-color: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.muted {
+  background-color: transparent;
+  border-color: var(--border);
+  color: var(--muted);
+}

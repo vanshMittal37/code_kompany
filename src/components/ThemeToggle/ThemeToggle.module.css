@@ -1,0 +1,68 @@
+/* ==========================================================================
+   ThemeToggle.module.css
+   ========================================================================== */
+
+.toggle {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-strong);
+  background-color: var(--surface);
+  color: var(--foreground);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  transition:
+    border-color var(--dur-fast) var(--ease),
+    background-color var(--dur-fast) var(--ease),
+    transform var(--dur-fast) var(--ease);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .toggle:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+}
+
+.iconWrap {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 180ms var(--ease);
+}
+
+.sunIcon,
+.moonIcon {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  transition:
+    opacity 180ms var(--ease),
+    transform 180ms var(--ease);
+}
+
+.showSun .sunIcon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+.showSun .moonIcon {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.6);
+}
+
+.showMoon .sunIcon {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.6);
+}
+
+.showMoon .moonIcon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}

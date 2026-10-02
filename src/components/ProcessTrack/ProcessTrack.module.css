@@ -1,0 +1,150 @@
+/* ==========================================================================
+   ProcessTrack.module.css
+   ========================================================================== */
+
+.processSection {
+  background-color: var(--background);
+}
+
+.pinnedSection {
+  height: 300vh;
+  position: relative;
+}
+
+.stickyWindow {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.horizontalTrack {
+  display: flex;
+  gap: var(--space-6);
+  padding-inline: var(--gutter);
+  will-change: transform;
+  transition: transform 100ms linear;
+}
+
+.stepCard {
+  flex: 0 0 420px;
+  height: 380px;
+  padding: var(--space-7);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background-color: var(--card);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 0.5;
+  transition: opacity 300ms var(--ease), border-color 300ms var(--ease);
+}
+
+.stepActive {
+  opacity: 1;
+  border-color: var(--border-strong);
+}
+
+.stepNum {
+  font-family: var(--font-sans);
+  font-size: clamp(3.5rem, 6vw, 6rem);
+  font-weight: 800;
+  line-height: 0.9;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--foreground);
+  transition: color 300ms var(--ease);
+}
+
+.stepActive .stepNum {
+  color: var(--accent);
+  -webkit-text-stroke: 0px transparent;
+}
+
+.stepName {
+  font-size: var(--fs-h2);
+  font-weight: 600;
+  margin-top: auto;
+}
+
+.stepDesc {
+  color: var(--muted);
+  font-size: var(--fs-body);
+  margin-top: var(--space-2);
+}
+
+.progressContainer {
+  margin-top: var(--space-8);
+}
+
+.progressBar {
+  width: 100%;
+  height: 2px;
+  background-color: var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.progressFill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: var(--accent);
+  transition: width 100ms linear;
+}
+
+/* Tablet & Mobile Vertical Timeline */
+.verticalTimeline {
+  position: relative;
+  margin-top: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+  padding-left: var(--space-6);
+}
+
+.timelineLine {
+  position: absolute;
+  left: 8px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--border-strong);
+}
+
+.timelineStep {
+  position: relative;
+}
+
+.dot {
+  position: absolute;
+  left: calc(-1 * var(--space-6) + 3px);
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  border: 2px solid var(--background);
+}
+
+.stepContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.mobileNum {
+  color: var(--accent);
+}
+
+.mobileName {
+  font-size: var(--fs-h3);
+}
+
+.mobileDesc {
+  color: var(--muted);
+  font-size: var(--fs-body);
+}

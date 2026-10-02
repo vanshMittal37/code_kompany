@@ -1,0 +1,47 @@
+/* ==========================================================================
+   GenerativeVisual.module.css
+   ========================================================================== */
+
+.visual {
+  width: 100%;
+  height: 100%;
+  display: block;
+  user-select: none;
+}
+
+.rotateSlow {
+  transform-origin: 400px 225px;
+  animation: rotate 30s linear infinite;
+}
+
+.pulse {
+  transform-origin: center;
+  animation: pulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+    transform: scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rotateSlow,
+  .pulse {
+    animation: none !important;
+  }
+}

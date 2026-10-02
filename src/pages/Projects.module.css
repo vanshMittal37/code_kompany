@@ -1,0 +1,153 @@
+/* ==========================================================================
+   Projects.module.css
+   ========================================================================== */
+
+/* ── Hero ──────────────────────────────────────────────── */
+.hero {
+  padding-top: calc(var(--section-space) + 5rem);
+  padding-bottom: var(--space-9);
+}
+
+.eyebrow {
+  margin-bottom: var(--space-5);
+  color: var(--accent);
+}
+
+.heroTitle {
+  font-size: var(--fs-h1);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  max-width: 14ch;
+}
+
+.heroTitle em {
+  font-style: italic;
+  color: var(--muted);
+}
+
+.heroIntro {
+  margin-top: var(--space-6);
+  max-width: 54ch;
+}
+
+.heroIntro p {
+  font-size: clamp(1.05rem, 1.5vw + 0.7rem, 1.25rem);
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+/* ── Filter row ─────────────────────────────────────────── */
+.filterSection {
+  padding-bottom: var(--space-8);
+}
+
+.filterRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.filterBtn {
+  padding: var(--space-2) var(--space-5);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-strong);
+  background: transparent;
+  color: var(--muted);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition: color var(--dur-fast) var(--ease),
+              background var(--dur-fast) var(--ease),
+              border-color var(--dur-fast) var(--ease);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .filterBtn:hover {
+    color: var(--foreground);
+    border-color: var(--border-strong);
+    background: var(--surface);
+  }
+}
+
+.filterActive {
+  background: var(--foreground);
+  color: var(--background);
+  border-color: var(--foreground);
+}
+
+/* ── Grid section ────────────────────────────────────────── */
+.gridSection {
+  padding-bottom: var(--section-space);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--space-6);
+}
+
+/* Default: full width */
+.gridItem {
+  grid-column: span 12;
+}
+
+/* Layout variants — editorial asymmetry */
+.layout_wide {
+  grid-column: span 12;
+}
+
+.layout_tall {
+  grid-column: span 12;
+}
+
+.layout_square {
+  grid-column: span 12;
+}
+
+@media (min-width: 768px) {
+  .layout_wide {
+    grid-column: span 8;
+  }
+  .layout_tall {
+    grid-column: span 4;
+  }
+  .layout_square {
+    grid-column: span 6;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    gap: var(--space-8);
+  }
+
+  /* Wide takes 8 columns, leaving room for tall next to it */
+  .layout_wide {
+    grid-column: span 8;
+  }
+  .layout_tall {
+    grid-column: span 4;
+  }
+  .layout_square {
+    grid-column: span 6;
+  }
+}
+
+/* ── Placeholder note ────────────────────────────────────── */
+.placeholderNote {
+  margin-top: var(--space-10);
+  padding-top: var(--space-7);
+  border-top: 1px solid var(--border);
+}
+
+.placeholderNote p {
+  font-size: var(--fs-small);
+  color: var(--muted);
+}
+
+.placeholderNote a {
+  color: var(--accent);
+  text-decoration: underline;
+}

@@ -1,0 +1,9 @@
+.page {
+  padding-block: var(--section-space);
+  padding-inline: var(--gutter);
+  max-width: var(--container);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}

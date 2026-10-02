@@ -1,0 +1,16 @@
+/* ==========================================================================
+   App.module.css — Layout shell styles
+   ========================================================================== */
+
+.mainContent {
+  min-height: calc(100vh - 76px);
+  outline: none;
+}
+
+/* Page loading fallback */
+.fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+}

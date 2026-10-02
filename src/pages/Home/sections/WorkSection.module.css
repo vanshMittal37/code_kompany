@@ -1,0 +1,48 @@
+/* ==========================================================================
+   WorkSection.module.css
+   ========================================================================== */
+
+.workSection {
+  background-color: var(--background);
+}
+
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: clamp(1.5rem, 3vw, 4rem);
+}
+
+.item1 {
+  grid-column: 1 / span 7;
+}
+
+.item2 {
+  grid-column: 8 / span 5;
+  margin-top: var(--space-10);
+}
+
+.item3 {
+  grid-column: 1 / span 5;
+  margin-top: var(--space-8);
+}
+
+.item4 {
+  grid-column: 6 / span 7;
+  margin-top: var(--space-9);
+}
+
+@media (max-width: 899px) {
+  .projectGrid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-7);
+  }
+
+  .item1,
+  .item2,
+  .item3,
+  .item4 {
+    width: 100%;
+    margin-top: 0 !important;
+  }
+}

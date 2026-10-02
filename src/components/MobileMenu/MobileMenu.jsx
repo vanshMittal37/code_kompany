@@ -21,10 +21,14 @@ export default function MobileMenu({ isOpen, onClose, menuBtnRef }) {
   const location = useLocation();
   const reducedMotion = useReducedMotion();
 
-  // Close on route change
+  // Close ONLY on route change (not when opening the menu)
+  const prevPathRef = useRef(location.pathname);
   useEffect(() => {
-    if (isOpen) onClose();
-  }, [location.pathname, isOpen, onClose]);
+    if (prevPathRef.current !== location.pathname) {
+      prevPathRef.current = location.pathname;
+      onClose();
+    }
+  }, [location.pathname, onClose]);
 
   // Trap focus & lock body scroll
   useEffect(() => {

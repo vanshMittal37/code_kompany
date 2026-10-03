@@ -49,6 +49,10 @@
   }
 }
 
+.footerLogoWrap {
+  margin-bottom: var(--space-4);
+}
+
 .descText {
   color: var(--muted);
   font-size: var(--fs-body);

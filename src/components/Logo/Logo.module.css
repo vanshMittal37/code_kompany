@@ -1,0 +1,49 @@
+/* ==========================================================================
+   Logo.module.css
+   ========================================================================== */
+
+.logoWrap {
+  display: inline-flex;
+  align-items: center;
+  color: var(--foreground);
+  text-decoration: none;
+  transition: opacity var(--dur-fast) var(--ease);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .logoWrap:hover {
+    opacity: 0.75;
+  }
+}
+
+.logoSvg {
+  display: block;
+  height: 100%;
+  width: auto;
+  fill: currentColor;
+}
+
+/* Horizontal variant: mark on left, wordmark/text on right */
+.horizontalWrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.horizontalMark {
+  display: block;
+  height: 100%;
+  width: auto;
+  fill: currentColor;
+}
+
+.horizontalText {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--foreground);
+  white-space: nowrap;
+  line-height: 1;
+}

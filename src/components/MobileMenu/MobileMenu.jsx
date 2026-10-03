@@ -3,6 +3,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { email, phone, phoneHref, whatsappHref, navigation } from '../../config/site';
 import Button from '../Button/Button';
 import ImageBlock from '../ImageBlock/ImageBlock';
+import Logo from '../Logo/Logo';
 import { useReducedMotion } from '../../hooks/useReducedMotion';
 import styles from './MobileMenu.module.css';
 
@@ -86,6 +87,10 @@ export default function MobileMenu({ isOpen, onClose, menuBtnRef }) {
       aria-label="Main menu"
     >
       <div className={styles.inner}>
+        {/* Top Logo Header */}
+        <div className={styles.topHeader}>
+          <Logo variant="horizontal" linkToHome size={34} onClick={onClose} />
+        </div>
         {/* Navigation list */}
         <nav aria-label="Mobile main navigation">
           <ul className={styles.linkList}>

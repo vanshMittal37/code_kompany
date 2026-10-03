@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import Seo from '../components/Seo/Seo';
 import { Reveal } from '../components/Reveal/Reveal';
 import Button from '../components/Button/Button';
+import Logo from '../components/Logo/Logo';
 import GenerativeVisual from '../components/GenerativeVisual/GenerativeVisual';
 import styles from './NotFound.module.css';
 
@@ -47,7 +48,11 @@ export default function NotFound() {
             </p>
           </Reveal>
 
-          {/* Primary CTA */}
+          {/* Logo Mark & Primary CTA */}
+          <Reveal delay={200} className={styles.markWrap}>
+            <Logo variant="mark" size={42} linkToHome />
+          </Reveal>
+
           <Reveal delay={240} className={styles.cta}>
             <Button to="/" variant="primary" size="lg" arrow magnetic>
               Back to home

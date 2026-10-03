@@ -6,6 +6,7 @@ import { useMediaQuery, DESKTOP_BREAK } from '../../hooks/useMediaQuery';
 import ThemeToggle from '../ThemeToggle/ThemeToggle';
 import Button from '../Button/Button';
 import MobileMenu from '../MobileMenu/MobileMenu';
+import Logo from '../Logo/Logo';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
@@ -32,11 +33,12 @@ export default function Navbar() {
           .join(' ')}
       >
         <div className={styles.headerInner}>
-          {/* Left: Brand Wordmark */}
-          <Link to="/" className={styles.wordmark} aria-label="Code Kompany — home">
-            <span className={styles.wordmarkText}>{wordmark}</span>
-            <span className={styles.accentDot} aria-hidden="true" />
-          </Link>
+          {/* Left: Brand Logo */}
+          <Logo
+            variant={isDesktop ? 'horizontal' : 'mark'}
+            size={isDesktop ? 36 : 32}
+            linkToHome
+          />
 
           {/* Right Side: ThemeToggle -> Desktop Nav (Services, Projects, About) -> Start a Project */}
           <div className={styles.actions}>

@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { ArrowUp } from 'lucide-react';
 import { wordmark, legalName, email, phone, phoneHref, whatsappHref, location, navigation } from '../../config/site';
 import Button from '../Button/Button';
+import Logo from '../Logo/Logo';
 import { Reveal } from '../Reveal/Reveal';
 import styles from './Footer.module.css';
 
@@ -31,6 +32,9 @@ export default function Footer({ hideCta = false }) {
         <div className={styles.middleGrid}>
           {/* Column 1 */}
           <div className={styles.colDescription}>
+            <div className={styles.footerLogoWrap}>
+              <Logo variant="full" size={88} linkToHome />
+            </div>
             <p className={styles.descText}>
               An AI-native software studio in Vadodara, India, building custom software, AI agents and digital systems.
             </p>

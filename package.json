@@ -9,7 +9,8 @@
     "lint": "oxlint",
     "preview": "vite preview",
     "images": "node scripts/optimize-images.mjs",
-    "og": "node scripts/make-og.mjs"
+    "og": "node scripts/make-og.mjs",
+    "logo": "node scripts/make-logo.mjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -25,6 +26,7 @@
     "@types/react-dom": "^19.2.7",
     "@vitejs/plugin-react": "^6.1.1",
     "oxlint": "^1.81.0",
+    "potrace": "^2.1.8",
     "sharp": "^0.34.0",
     "vite": "^8.3.0"
   }

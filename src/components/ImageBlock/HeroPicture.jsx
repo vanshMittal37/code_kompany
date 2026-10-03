@@ -33,7 +33,10 @@ export default function HeroPicture({ className = '' }) {
           {desktopEntry.lqip && (
             <div
               className={styles.lqip}
-              style={{ backgroundImage: `url(${desktopEntry.lqip})` }}
+              style={{
+                backgroundImage: `url(${desktopEntry.lqip})`,
+                opacity: isLoaded ? 0 : 1,
+              }}
               aria-hidden="true"
             />
           )}

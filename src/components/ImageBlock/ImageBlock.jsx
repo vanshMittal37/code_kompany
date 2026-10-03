@@ -75,7 +75,10 @@ export default function ImageBlock({
           {entry.lqip && (
             <div
               className={styles.lqip}
-              style={{ backgroundImage: `url(${entry.lqip})` }}
+              style={{
+                backgroundImage: `url(${entry.lqip})`,
+                opacity: isLoaded ? 0 : 1,
+              }}
               aria-hidden="true"
             />
           )}

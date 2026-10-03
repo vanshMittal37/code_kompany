@@ -25,45 +25,44 @@ export default function Navbar() {
       <header
         className={[
           styles.header,
-          isPast20 ? styles.scrolled : styles.atTop,
+          isPast20 ? styles.scrolled : '',
           isHidden ? styles.hidden : '',
         ]
           .filter(Boolean)
           .join(' ')}
       >
         <div className={styles.headerInner}>
-          {/* Left: Wordmark with accent dot */}
+          {/* Left: Brand Wordmark */}
           <Link to="/" className={styles.wordmark} aria-label="Code Kompany — home">
             <span className={styles.wordmarkText}>{wordmark}</span>
             <span className={styles.accentDot} aria-hidden="true" />
           </Link>
 
-          {/* Desktop Navigation */}
-          {isDesktop && (
-            <nav className={styles.desktopNav} aria-label="Main navigation">
-              <ul className={styles.navList}>
-                {navigation.main.map(({ label, href }) => (
-                  <li key={href}>
-                    <NavLink
-                      to={href}
-                      className={({ isActive }) =>
-                        `${styles.navLink} ${isActive ? styles.navLinkActive : ''}`
-                      }
-                    >
-                      {label}
-                    </NavLink>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          )}
-
-          {/* Right Actions */}
+          {/* Right Side: ThemeToggle -> Desktop Nav (Services, Projects, About) -> Start a Project */}
           <div className={styles.actions}>
             <ThemeToggle />
 
+            {isDesktop && (
+              <nav className={styles.desktopNav} aria-label="Main navigation">
+                <ul className={styles.navList}>
+                  {navigation.main.map(({ label, href }) => (
+                    <li key={href}>
+                      <NavLink
+                        to={href}
+                        className={({ isActive }) =>
+                          `${styles.navLink} ${isActive ? styles.navLinkActive : ''}`
+                        }
+                      >
+                        {label}
+                      </NavLink>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            )}
+
             {isDesktop ? (
-              <Button to="/contact" variant="primary" size="md" arrow>
+              <Button to="/contact" variant="primary" size="sm" arrow>
                 Start a Project
               </Button>
             ) : (

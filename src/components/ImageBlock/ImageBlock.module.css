@@ -53,6 +53,7 @@
   filter: blur(20px);
   transform: scale(1.1);
   z-index: 1;
+  transition: opacity 500ms var(--ease);
 }
 
 /* Image Wrapper */

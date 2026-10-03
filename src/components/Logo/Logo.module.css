@@ -16,14 +16,23 @@
   }
 }
 
-.logoSvg {
+/*
+  logoImg: the raw <img> pointing to a black-on-transparent SVG.
+  In light mode → the black logo looks correct.
+  In dark mode  → invert() flips it to white so it reads on dark backgrounds.
+*/
+.logoImg {
   display: block;
-  height: 100%;
-  width: auto;
-  fill: currentColor;
+  /* Switch black SVG to white in dark mode */
+  filter: invert(0);
+  transition: filter var(--dur-fast) var(--ease);
 }
 
-/* Horizontal variant: mark on left, wordmark/text on right */
+:global(:root[data-theme="dark"]) .logoImg {
+  filter: invert(1);
+}
+
+/* Horizontal variant: mark on left, wordmark text on right */
 .horizontalWrap {
   display: inline-flex;
   align-items: center;
@@ -31,10 +40,7 @@
 }
 
 .horizontalMark {
-  display: block;
-  height: 100%;
-  width: auto;
-  fill: currentColor;
+  flex-shrink: 0;
 }
 
 .horizontalText {

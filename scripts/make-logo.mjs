@@ -50,19 +50,46 @@ async function main() {
     .png()
     .toBuffer();
 
+  const meta = await sharp(fullTrimmedBuffer).metadata();
+  const W = meta.width;
+  const H = meta.height;
+
+  // Find exact gap between mark and wordmark by analyzing row pixel data
+  const rawPixelData = await sharp(fullTrimmedBuffer).raw().toBuffer();
+  
+  // Image is 4 channels (RGBA). Count dark pixels per row.
+  const rowDarkCount = new Array(H).fill(0);
+  for (let y = 0; y < H; y++) {
+    for (let x = 0; x < W; x++) {
+      const idx = (y * W + x) * 4;
+      const r = rawPixelData[idx], g = rawPixelData[idx+1], b = rawPixelData[idx+2];
+      if (r < 100 && g < 100 && b < 100) {
+        rowDarkCount[y]++;
+      }
+    }
+  }
+
+  // Find the zero-dark-pixel gap row between Y = 0.65*H and Y = 0.78*H
+  let gapY = Math.floor(H * 0.70);
+  for (let y = Math.floor(H * 0.65); y < Math.floor(H * 0.78); y++) {
+    if (rowDarkCount[y] === 0) {
+      gapY = y;
+      break;
+    }
+  }
+
+  console.log(`Measured Logo Height: ${H}px, Width: ${W}px. Mark/Wordmark gap found at Y = ${gapY}px`);
+
+  // 1. Full SVG
   const fullSvgRaw = await traceImage(fullTrimmedBuffer, { color: '#000000' });
   const fullSvg = cleanSvg(fullSvgRaw, 'currentColor');
   fs.writeFileSync(path.join(BRAND_DIR, 'logo-full.svg'), fullSvg);
   console.log('✓ Created public/brand/logo-full.svg');
 
-  const meta = await sharp(fullTrimmedBuffer).metadata();
-  const W = meta.width;
-  const H = meta.height;
-
-  // 2. Mark only ({ CO / KO }) - top 55%
-  const markH = Math.floor(H * 0.55);
+  // 2. Mark only ({ CO / KO }) - top to gapY
   const markBuffer = await sharp(fullTrimmedBuffer)
-    .extract({ left: 0, top: 0, width: W, height: markH })
+    .extract({ left: 0, top: 0, width: W, height: gapY })
+    .trim()
     .png()
     .toBuffer();
 
@@ -71,11 +98,11 @@ async function main() {
   fs.writeFileSync(path.join(BRAND_DIR, 'logo-mark.svg'), markSvg);
   console.log('✓ Created public/brand/logo-mark.svg');
 
-  // 3. Wordmark only ("CODE KOMPANY") - bottom 45%
-  const wordTop = Math.floor(H * 0.55);
-  const wordH = H - wordTop;
+  // 3. Wordmark only ("CODE KOMPANY") - gapY to bottom
+  const wordHeight = meta.height - gapY;
   const wordmarkBuffer = await sharp(fullTrimmedBuffer)
-    .extract({ left: 0, top: wordTop, width: W, height: wordH })
+    .extract({ left: 0, top: gapY, width: W, height: wordHeight })
+    .trim()
     .png()
     .toBuffer();
 
@@ -85,7 +112,6 @@ async function main() {
   console.log('✓ Created public/brand/logo-wordmark.svg');
 
   // 4. Create PNG versions for JSON-LD, Manifest & App Icons
-  // logo-512.png (512px black logo on transparent background)
   const logo512Canvas = await sharp({
     create: { width: 512, height: 512, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } }
   }).png().toBuffer();
@@ -98,95 +124,95 @@ async function main() {
     }
   }
 
-  const logoTransparentBuffer = await sharp(rawData, {
+  const transparentLogo = await sharp(rawData, {
     raw: { width: W, height: H, channels: 4 }
   }).png().toBuffer();
 
+  const logo512 = await sharp(transparentLogo)
+    .resize(480, 480, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } })
+    .toBuffer();
+
   await sharp(logo512Canvas)
-    .composite([{ input: await sharp(logoTransparentBuffer).resize(480, 480, { fit: 'contain' }).toBuffer(), gravity: 'center' }])
-    .png()
+    .composite([{ input: logo512, gravity: 'center' }])
     .toFile(path.join(BRAND_DIR, 'logo-512.png'));
   console.log('✓ Created public/brand/logo-512.png');
 
-  // 5. Favicon SVG with theme media query
-  const pathMatch = markSvgRaw.match(/<path[^>]+d="([^"]+)"/);
-  const pathD = pathMatch ? pathMatch[1] : '';
-  const viewBoxMatch = markSvgRaw.match(/viewBox="([^"]+)"/);
-  const viewBox = viewBoxMatch ? viewBoxMatch[1] : '0 0 100 100';
-
-  const faviconSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${viewBox}">
+  // Favicon SVG - Adaptive
+  const markMeta = await sharp(markBuffer).metadata();
+  const faviconSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${markMeta.width} ${markMeta.height}">
   <style>
     path { fill: #141414; }
     @media (prefers-color-scheme: dark) {
       path { fill: #F2F1EC; }
     }
   </style>
-  <path fill-rule="evenodd" d="${pathD}" />
+  ${markSvg.replace(/<svg[^>]*>/, '').replace('</svg>', '')}
 </svg>`;
-
   fs.writeFileSync(path.join(PUBLIC_DIR, 'favicon.svg'), faviconSvg);
   console.log('✓ Created public/favicon.svg');
 
-  // 6. PNG Favicons & App Icons (apple-touch-icon 180x180, icon-192, icon-512)
-  // Dark mark on transparent 32x32
-  const markRawData = await sharp(markBuffer).ensureAlpha().raw().toBuffer();
-  const markMeta = await sharp(markBuffer).metadata();
-  for (let i = 0; i < markRawData.length; i += 4) {
-    if (markRawData[i] > 200 && markRawData[i + 1] > 200 && markRawData[i + 2] > 200) {
-      markRawData[i + 3] = 0;
+  // Favicon 32x32 PNG
+  const markTransparentRaw = await sharp(markBuffer).ensureAlpha().raw().toBuffer();
+  for (let i = 0; i < markTransparentRaw.length; i += 4) {
+    if (markTransparentRaw[i] > 200 && markTransparentRaw[i + 1] > 200 && markTransparentRaw[i + 2] > 200) {
+      markTransparentRaw[i + 3] = 0;
     }
   }
-
-  const markTransparentBuffer = await sharp(markRawData, {
+  const markTransparent = await sharp(markTransparentRaw, {
     raw: { width: markMeta.width, height: markMeta.height, channels: 4 }
   }).png().toBuffer();
 
-  await sharp(markTransparentBuffer)
-    .resize(32, 32, { fit: 'contain' })
-    .png()
+  await sharp(markTransparent)
+    .resize(32, 32, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } })
     .toFile(path.join(PUBLIC_DIR, 'favicon-32.png'));
   console.log('✓ Created public/favicon-32.png');
 
-  // Create off-white mark on #0B0B0C background for Apple Touch & Web Manifest icons
-  const offWhiteMarkRaw = Buffer.from(markRawData);
+  // Apple touch icon 180x180 (off-white mark on #0B0B0C background)
+  const offWhiteMarkRaw = await sharp(markBuffer).ensureAlpha().raw().toBuffer();
   for (let i = 0; i < offWhiteMarkRaw.length; i += 4) {
-    if (offWhiteMarkRaw[i] < 100 && offWhiteMarkRaw[i + 3] > 0) {
-      offWhiteMarkRaw[i] = 242;     // R
-      offWhiteMarkRaw[i + 1] = 241; // G
-      offWhiteMarkRaw[i + 2] = 236; // B
-      offWhiteMarkRaw[i + 3] = 255; // A
-    } else {
+    if (offWhiteMarkRaw[i] > 200 && offWhiteMarkRaw[i + 1] > 200 && offWhiteMarkRaw[i + 2] > 200) {
       offWhiteMarkRaw[i + 3] = 0;
+    } else {
+      offWhiteMarkRaw[i] = 242;     // R #F2
+      offWhiteMarkRaw[i + 1] = 241; // G #F1
+      offWhiteMarkRaw[i + 2] = 236; // B #EC
     }
   }
-
-  const offWhiteMarkBuffer = await sharp(offWhiteMarkRaw, {
+  const offWhiteMark = await sharp(offWhiteMarkRaw, {
     raw: { width: markMeta.width, height: markMeta.height, channels: 4 }
   }).png().toBuffer();
 
-  // apple-touch-icon 180x180
+  const appleMarkResized = await sharp(offWhiteMark)
+    .resize(130, 130, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } })
+    .toBuffer();
+
   await sharp({
     create: { width: 180, height: 180, channels: 4, background: { r: 11, g: 11, b: 12, alpha: 1 } }
   })
-    .composite([{ input: await sharp(offWhiteMarkBuffer).resize(130, 130, { fit: 'contain' }).toBuffer(), gravity: 'center' }])
+    .composite([{ input: appleMarkResized, gravity: 'center' }])
     .png()
     .toFile(path.join(PUBLIC_DIR, 'apple-touch-icon.png'));
   console.log('✓ Created public/apple-touch-icon.png');
 
-  // icon-192.png
+  // Icon 192 and 512 for site.webmanifest
+  const icon192Mark = await sharp(offWhiteMark)
+    .resize(140, 140, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } })
+    .toBuffer();
   await sharp({
     create: { width: 192, height: 192, channels: 4, background: { r: 11, g: 11, b: 12, alpha: 1 } }
   })
-    .composite([{ input: await sharp(offWhiteMarkBuffer).resize(140, 140, { fit: 'contain' }).toBuffer(), gravity: 'center' }])
+    .composite([{ input: icon192Mark, gravity: 'center' }])
     .png()
     .toFile(path.join(PUBLIC_DIR, 'icon-192.png'));
   console.log('✓ Created public/icon-192.png');
 
-  // icon-512.png
+  const icon512Mark = await sharp(offWhiteMark)
+    .resize(380, 380, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } })
+    .toBuffer();
   await sharp({
     create: { width: 512, height: 512, channels: 4, background: { r: 11, g: 11, b: 12, alpha: 1 } }
   })
-    .composite([{ input: await sharp(offWhiteMarkBuffer).resize(380, 380, { fit: 'contain' }).toBuffer(), gravity: 'center' }])
+    .composite([{ input: icon512Mark, gravity: 'center' }])
     .png()
     .toFile(path.join(PUBLIC_DIR, 'icon-512.png'));
   console.log('✓ Created public/icon-512.png');
@@ -194,7 +220,4 @@ async function main() {
   console.log('✨ Brand logo vector tracing & icon generation complete!');
 }
 
-main().catch((err) => {
-  console.error('❌ Error processing logo:', err);
-  process.exit(1);
-});
+main().catch(console.error);

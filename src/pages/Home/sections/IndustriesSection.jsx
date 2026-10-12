@@ -132,7 +132,10 @@ export default function IndustriesSection() {
                     framed="never"
                   />
                   <div className={styles.carouselContent}>
-                    <span className={styles.carouselTitle}>{ind.name}</span>
+                    <div>
+                      <span className={styles.carouselTitle}>{ind.name}</span>
+                      {ind.line && <p className={styles.carouselLine}>{ind.line}</p>}
+                    </div>
                     <ArrowUpRight size={20} className={styles.carouselArrow} />
                   </div>
                 </Link>

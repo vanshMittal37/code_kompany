@@ -39,6 +39,7 @@ export default function Seo({
   path = '',
   image = '/og-image.png',
   noindex = false,
+  jsonLd = null,
 }) {
   useEffect(() => {
     const fullTitle = title
@@ -68,7 +69,26 @@ export default function Seo({
     updateMetaTag('meta[name="twitter:title"]', 'name', 'twitter:title', fullTitle);
     updateMetaTag('meta[name="twitter:description"]', 'name', 'twitter:description', description);
     updateMetaTag('meta[name="twitter:image"]', 'name', 'twitter:image', fullImage);
-  }, [title, description, path, image, noindex]);
+
+    // Page-specific JSON-LD (e.g. Service)
+    let jsonLdScript = document.getElementById('page-jsonld');
+    if (jsonLd) {
+      if (!jsonLdScript) {
+        jsonLdScript = document.createElement('script');
+        jsonLdScript.id = 'page-jsonld';
+        jsonLdScript.type = 'application/ld+json';
+        document.head.appendChild(jsonLdScript);
+      }
+      jsonLdScript.textContent = JSON.stringify(jsonLd);
+    } else if (jsonLdScript) {
+      jsonLdScript.remove();
+    }
+
+    return () => {
+      const script = document.getElementById('page-jsonld');
+      if (script) script.remove();
+    };
+  }, [title, description, path, image, noindex, jsonLd]);
 
   return null;
 }

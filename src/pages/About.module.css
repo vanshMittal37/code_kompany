@@ -286,3 +286,136 @@
     color: var(--accent);
   }
 }
+
+/* ── Hero Tagline ────────────────────────────────────────── */
+.heroTagline {
+  font-size: clamp(1.2rem, 1.8vw + 0.6rem, 1.6rem);
+  color: var(--muted);
+  margin-top: var(--space-4);
+  max-width: 34ch;
+  line-height: 1.4;
+}
+
+/* ── Mission ─────────────────────────────────────────────── */
+.missionSection {
+  padding-block: var(--section-space);
+  border-top: 1px solid var(--border);
+}
+
+.missionQuote {
+  font-size: clamp(1.3rem, 2.4vw + 0.5rem, 2.3rem);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.35;
+  color: var(--foreground);
+  max-width: 34ch;
+  margin-top: var(--space-4);
+}
+
+/* ── Honest Start ────────────────────────────────────────── */
+.honestSection {
+  padding-block: var(--space-8);
+  border-top: 1px solid var(--border);
+}
+
+.honestText {
+  font-size: clamp(1.1rem, 1.3vw + 0.6rem, 1.35rem);
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 44ch;
+  margin-top: var(--space-4);
+}
+
+/* ── Vendor Agnostic Note ────────────────────────────────── */
+.vendorNote {
+  margin-top: var(--space-7);
+  font-size: var(--fs-body);
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* ── Why Choose Code Kompany ─────────────────────────────── */
+.whyChooseSection {
+  padding-block: var(--section-space);
+  border-top: 1px solid var(--border);
+}
+
+.whyChooseList {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--border);
+  margin-top: var(--space-7);
+}
+
+.whyChooseItem {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2);
+  padding: var(--space-5) 0;
+  border-bottom: 1px solid var(--border);
+}
+
+@media (min-width: 768px) {
+  .whyChooseItem {
+    grid-template-columns: 280px 1fr;
+    align-items: baseline;
+    gap: var(--space-6);
+  }
+}
+
+.whyChooseTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.accentMarker {
+  color: var(--accent);
+}
+
+.whyChooseDesc {
+  font-size: var(--fs-body);
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ── Founder Block ───────────────────────────────────────── */
+.founderSection {
+  padding-block: var(--section-space);
+  border-top: 1px solid var(--border);
+}
+
+.founderName {
+  font-size: var(--fs-h2);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--foreground);
+  margin-top: var(--space-3);
+}
+
+.founderRole {
+  color: var(--muted);
+  margin-top: var(--space-2);
+  font-family: var(--font-mono);
+}
+
+.founderLinkWrap {
+  margin-top: var(--space-6);
+}
+
+.founderEmailLink {
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--fs-body);
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  transition: opacity var(--dur-fast) var(--ease);
+}
+
+.founderEmailLink:hover {
+  text-decoration: underline;
+}

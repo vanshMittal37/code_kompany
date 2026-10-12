@@ -1,12 +1,15 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Check, ChevronLeft, ChevronRight } from 'lucide-react';
-import { getNextService } from '../../data/services';
+import { getNextService, TOTAL_SERVICES } from '../../data/services';
 import Breadcrumb from '../../components/Breadcrumb/Breadcrumb';
 import ImageBlock from '../../components/ImageBlock/ImageBlock';
 import GenerativeVisual from '../../components/GenerativeVisual/GenerativeVisual';
 import Tag from '../../components/Tag/Tag';
 import Button from '../../components/Button/Button';
+import OfferingsGrid from '../../components/OfferingsGrid/OfferingsGrid';
+import TierCards from '../../components/TierCards/TierCards';
+import WorkflowList from '../../components/WorkflowList/WorkflowList';
 import CTASection from '../../components/CTASection/CTASection';
 import { Reveal, SplitReveal } from '../../components/Reveal/Reveal';
 import { useScroll } from '../../hooks/useScroll';
@@ -17,6 +20,18 @@ export default function StandardLayout({ service }) {
   const nextService = getNextService(service.slug);
   const reducedMotion = useReducedMotion();
   const { scrollY } = useScroll();
+
+  // Dynamic section numbers calculation
+  let counter = 1;
+  const problemIndex = String(counter++).padStart(2, '0');
+  const buildIndex = String(counter++).padStart(2, '0');
+  const offeringsIndex = service.offerings ? String(counter++).padStart(2, '0') : null;
+  const workflowsIndex = service.workflows ? String(counter++).padStart(2, '0') : null;
+  const valueIndex = String(counter++).padStart(2, '0');
+  const capIndex = String(counter++).padStart(2, '0');
+  const techIndex = String(counter++).padStart(2, '0');
+  const useCasesIndex = String(counter++).padStart(2, '0');
+  const ctaIndex = String(counter++).padStart(2, '0');
 
   // Problem scroll word highlight
   const problemRef = useRef(null);
@@ -65,7 +80,9 @@ export default function StandardLayout({ service }) {
       <section className={styles.topBarSection}>
         <div className={`container ${styles.topBarInner}`}>
           <Breadcrumb items={[{ label: 'Services', to: '/services' }, { label: service.name }]} />
-          <span className="label">SERVICE {service.number} / 08</span>
+          <span className="label">
+            SERVICE {service.number} / {String(TOTAL_SERVICES).padStart(2, '0')}
+          </span>
         </div>
       </section>
 
@@ -90,6 +107,9 @@ export default function StandardLayout({ service }) {
           <div className={styles.introGrid}>
             <div className={styles.introLeft}>
               <p className={styles.introText}>{service.intro}</p>
+              {service.introExtra && (
+                <p className={styles.introExtra}>{service.introExtra}</p>
+              )}
             </div>
             <div className={styles.introRight}>
               <div className={styles.tagGroup}>
@@ -123,7 +143,7 @@ export default function StandardLayout({ service }) {
       {/* 5. The Problem */}
       <section ref={problemRef} className={`section ${styles.problemSection}`}>
         <div className="container">
-          <Reveal className={`label ${styles.sectionLabel}`}>(01) — THE PROBLEM</Reveal>
+          <Reveal className={`label ${styles.sectionLabel}`}>({problemIndex}) — THE PROBLEM</Reveal>
 
           <div className={styles.quoteBlock}>
             <span className={styles.quoteMark} aria-hidden="true">
@@ -158,7 +178,7 @@ export default function StandardLayout({ service }) {
       <section className={`section ${styles.buildSection}`}>
         <div className="container">
           <Reveal className={`label ${styles.sectionLabel}`}>
-            (02) — {service.buildLabel ? service.buildLabel.toUpperCase() : 'WHAT WE BUILD'}
+            ({buildIndex}) — {service.buildLabel ? service.buildLabel.toUpperCase() : 'WHAT WE BUILD'}
           </Reveal>
 
           <div className={styles.buildGrid}>
@@ -169,14 +189,45 @@ export default function StandardLayout({ service }) {
               </Reveal>
             ))}
           </div>
+
+          {service.buildApproach && (
+            <Reveal delay={120}>
+              <p className={styles.buildApproach}>{service.buildApproach}</p>
+            </Reveal>
+          )}
         </div>
       </section>
 
-      {/* 7. Business Value */}
+      {/* 7. Ways We Can Help / Offerings / Tiers */}
+      {service.offerings && (
+        service.offeringsType === 'tiers' ? (
+          <TierCards
+            tiers={service.offerings}
+            sectionIndex={offeringsIndex}
+            contactService={service.slug}
+          />
+        ) : (
+          <OfferingsGrid
+            offerings={service.offerings}
+            sectionIndex={offeringsIndex}
+          />
+        )
+      )}
+
+      {/* 8. Workflow Automation (What we automate - AI only) */}
+      {service.workflows && (
+        <WorkflowList
+          workflows={service.workflows}
+          sectionIndex={workflowsIndex}
+          closingLine="Free your team for strategic work while automation handles the routine."
+        />
+      )}
+
+      {/* 9. Business Value */}
       <section className={`section ${styles.valueSection}`}>
         <div className="container">
           <Reveal className={`label ${styles.sectionLabel}`}>
-            (03) — {service.valueLabel ? service.valueLabel.toUpperCase() : 'BUSINESS VALUE'}
+            ({valueIndex}) — {service.valueLabel ? service.valueLabel.toUpperCase() : 'BUSINESS VALUE'}
           </Reveal>
 
           <div className={styles.valueList}>
@@ -189,13 +240,19 @@ export default function StandardLayout({ service }) {
               </Reveal>
             ))}
           </div>
+
+          {service.valueClosing && (
+            <Reveal delay={120}>
+              <p className={styles.valueClosing}>{service.valueClosing}</p>
+            </Reveal>
+          )}
         </div>
       </section>
 
-      {/* 8. Capabilities */}
+      {/* 10. Capabilities */}
       <section className={`section ${styles.capabilitiesSection}`}>
         <div className="container">
-          <Reveal className={`label ${styles.sectionLabel}`}>(04) — CAPABILITIES</Reveal>
+          <Reveal className={`label ${styles.sectionLabel}`}>({capIndex}) — CAPABILITIES</Reveal>
 
           <div className={styles.capabilitiesGrid}>
             {service.capabilities.map((cap, idx) => (
@@ -208,30 +265,42 @@ export default function StandardLayout({ service }) {
         </div>
       </section>
 
-      {/* 9. Technologies */}
+      {/* 11. Vendor-Agnostic Technology Section (Section E) */}
       <section className={`section ${styles.techSection}`}>
         <div className="container">
-          <Reveal className={`label ${styles.sectionLabel}`}>(05) — TECHNOLOGIES</Reveal>
-
-          <Reveal delay={80} className={styles.techPillRow}>
-            {service.technologies.map((tech) => (
-              <Tag key={tech} variant="default" className={styles.largePill}>
-                {tech}
-              </Tag>
-            ))}
+          <Reveal className={`label ${styles.sectionLabel}`}>
+            ({techIndex}) — HOW WE CHOOSE TECHNOLOGY
           </Reveal>
 
-          <Reveal delay={140} className={styles.techNoteWrap}>
-            <p className={`label ${styles.techNote}`}>Final stack chosen per project.</p>
+          <Reveal delay={80}>
+            <h2 className={styles.techBigLine}>
+              No default stack. We choose tools for your business after discovery.
+            </h2>
           </Reveal>
+
+          <Reveal delay={140}>
+            <p className={styles.techMutedLine}>
+              We're vendor-agnostic — the right technology is the one that fits your needs, budget and team.
+            </p>
+          </Reveal>
+
+          {service.technologies && service.technologies.length > 0 && (
+            <Reveal delay={180} className={styles.techPillRow}>
+              {service.technologies.map((tech) => (
+                <Tag key={tech} variant="default" className={styles.largePill}>
+                  {tech}
+                </Tag>
+              ))}
+            </Reveal>
+          )}
         </div>
       </section>
 
-      {/* 10. Use Cases */}
+      {/* 12. Use Cases */}
       <section className={`section ${styles.useCasesSection}`}>
         <div className="container">
           <div className={styles.useCasesHeader}>
-            <Reveal className={`label ${styles.sectionLabel}`}>(06) — EXAMPLE USE CASES</Reveal>
+            <Reveal className={`label ${styles.sectionLabel}`}>({useCasesIndex}) — EXAMPLE USE CASES</Reveal>
             <div className={styles.carouselBtns}>
               <button
                 type="button"
@@ -276,9 +345,9 @@ export default function StandardLayout({ service }) {
         </div>
       </section>
 
-      {/* 11. CTA + Next Service */}
+      {/* 13. CTA + Next Service */}
       <CTASection
-        label="(07) — START"
+        label={`(${ctaIndex}) — START`}
         title={`Ready to talk about ${service.shortName}?`}
         text="Tell us what you want to improve. We'll take it from there."
         primary={{ text: 'Start a Project', to: `/contact?service=${service.slug}` }}
@@ -296,7 +365,9 @@ export default function StandardLayout({ service }) {
           <Link to={`/services/${nextService.slug}`} className={styles.nextCard}>
             <div className={styles.nextMeta}>
               <span className="label">NEXT SERVICE</span>
-              <span className="label">{nextService.number} / 08</span>
+              <span className="label">
+                {nextService.number} / {String(TOTAL_SERVICES).padStart(2, '0')}
+              </span>
             </div>
             <h2 className={styles.nextTitle}>{nextService.name}</h2>
             <div className={styles.nextVisualWrap}>

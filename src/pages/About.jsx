@@ -8,12 +8,14 @@ import {
   description,
   email,
   whatsappHref,
-  location,
+  reach,
+  tagline,
+  founder,
 } from '../config/site';
 import styles from './About.module.css';
 
-/* ─── Stated values (copy only — never invent facts) ─────── */
-const VALUES = [
+/* ─── 3 Principles ────────────────────────────────────────── */
+const PRINCIPLES = [
   {
     title: 'AI-native by design',
     body: "We don't retrofit AI as a feature. Every system we build is designed with automation and intelligence at its foundation.",
@@ -26,22 +28,51 @@ const VALUES = [
     title: 'Honest by default',
     body: "We say what's possible, what isn't, and what the trade-offs are. No inflated promises, no vanity metrics.",
   },
+];
+
+/* ─── Why choose Code Kompany ────────────────────────────── */
+const WHY_CHOOSE = [
   {
-    title: 'Outcomes, not outputs',
-    body: 'We care whether your business actually improves. Software is a means, not the end.',
+    title: 'Industry focus',
+    desc: 'Manufacturing, healthcare, real estate and digital commerce.',
+  },
+  {
+    title: 'End-to-end solutions',
+    desc: 'From first consultation to deployment and ongoing support.',
+  },
+  {
+    title: 'Scalable architecture',
+    desc: 'Solutions designed to grow with your business.',
+  },
+  {
+    title: 'Modern technology',
+    desc: 'Current frameworks, cloud platforms and AI capabilities.',
+  },
+  {
+    title: 'Client-centric approach',
+    desc: 'We listen, adapt and deliver.',
+  },
+  {
+    title: 'Transparent communication',
+    desc: 'Regular updates, clear timelines and realistic expectations.',
+  },
+  {
+    title: 'Fair, transparent pricing',
+    desc: 'Clear scope and pricing agreed before work starts.',
   },
 ];
 
-/* ─── What we work with (factual capabilities) ───────────── */
+/* ─── All 9 Service capabilities ─────────────────────────── */
 const CAPABILITIES = [
   'AI Agents & Automation',
-  'Custom Software Development',
-  'Mobile Applications',
-  'Cloud Infrastructure',
+  'Software Development',
+  'Website Development',
+  'Mobile App Development',
+  'Cloud Solutions',
   'Digital Transformation',
-  'MVP Engineering',
-  'E-Commerce Systems',
-  'Industry-Specific Platforms',
+  'MVP Development',
+  'E-Commerce Solutions',
+  'Industry Solutions',
 ];
 
 export default function About() {
@@ -53,17 +84,20 @@ export default function About() {
         path="/about"
       />
 
-      {/* ── Opening statement ─────────────────────────────── */}
+      {/* ── 1. Hero ────────────────────────────────────────── */}
       <section className={styles.hero}>
         <div className="container">
           <Reveal className={`label ${styles.eyebrow}`}>ABOUT US</Reveal>
           <SplitReveal as="h1" className={styles.heroTitle}>
             {`An AI-native studio\nbuilt for serious work.`}
           </SplitReveal>
+          <Reveal delay={120}>
+            <p className={styles.heroTagline}>{tagline}</p>
+          </Reveal>
         </div>
       </section>
 
-      {/* ── Definition section ────────────────────────────── */}
+      {/* ── 2. Definition section ──────────────────────────── */}
       <section className={styles.definition}>
         <div className="container">
           <div className={styles.definitionGrid}>
@@ -88,21 +122,42 @@ export default function About() {
               </Reveal>
               <Reveal delay={160}>
                 <p className={styles.defBody}>
-                  We are a small, focused team. We work on one problem at a time and
-                  we work on it properly. Our clients are businesses — manufacturers,
-                  healthcare operators, retailers, and startups — who need software that
-                  genuinely works, not presentations about software.
+                  We are a focused studio working on business-critical software. Our clients are businesses — manufacturers,
+                  healthcare operators, real estate developers, retailers, and startups — who need software that
+                  genuinely works, built around their processes.
                 </p>
               </Reveal>
               <Reveal delay={240} className={styles.locationChip}>
-                <span className="label">📍 {location.display}</span>
+                <span className="label">📍 {reach}</span>
               </Reveal>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── Full-bleed mindset image ───────────────────────── */}
+      {/* ── 3. Mission block (large text, word-reveal) ─────── */}
+      <section className={styles.missionSection}>
+        <div className="container">
+          <Reveal className={`label ${styles.sectionLabel}`}>(MISSION)</Reveal>
+          <SplitReveal as="blockquote" className={styles.missionQuote}>
+            Our mission is to bridge the gap between vision and execution — helping startups, small businesses and established enterprises use technology to optimise operations, improve customer experiences and grow sustainably.
+          </SplitReveal>
+        </div>
+      </section>
+
+      {/* ── 4. An honest start block ────────────────────────── */}
+      <section className={styles.honestSection}>
+        <div className="container">
+          <Reveal className={`label ${styles.sectionLabel}`}>(AN HONEST START)</Reveal>
+          <Reveal delay={80}>
+            <p className={styles.honestText}>
+              We're a young studio, so instead of a long client list, we show you exactly how we work — from discovery to launch.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ── 5. Full-bleed mindset visual ────────────────────── */}
       <section className={`${styles.mindsetSection} full-bleed`}>
         <ImageBlock
           imageKey="aboutMindset"
@@ -123,7 +178,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* ── Values ────────────────────────────────────────── */}
+      {/* ── 6. Approach / 3 Principles + Vendor-agnostic line ── */}
       <section className={styles.valuesSection}>
         <div className="container">
           <Reveal className={`label ${styles.sectionLabel}`}>HOW WE WORK</Reveal>
@@ -132,7 +187,7 @@ export default function About() {
           </SplitReveal>
 
           <div className={styles.valuesGrid}>
-            {VALUES.map((v, i) => (
+            {PRINCIPLES.map((v, i) => (
               <Reveal key={v.title} stagger={i} className={styles.valueCard}>
                 <span className={`label ${styles.valueNumber}`}>0{i + 1}</span>
                 <h3 className={styles.valueTitle}>{v.title}</h3>
@@ -140,10 +195,58 @@ export default function About() {
               </Reveal>
             ))}
           </div>
+
+          <Reveal delay={160}>
+            <p className={styles.vendorNote}>
+              No default stack. We choose technology after discovery.
+            </p>
+          </Reveal>
         </div>
       </section>
 
-      {/* ── Capabilities list ─────────────────────────────── */}
+      {/* ── 7. Why Choose Code Kompany ──────────────────────── */}
+      <section className={styles.whyChooseSection}>
+        <div className="container">
+          <Reveal className={`label ${styles.sectionLabel}`}>(WHY CHOOSE US)</Reveal>
+          <SplitReveal as="h2" className={styles.sectionTitle}>
+            Why choose Code Kompany
+          </SplitReveal>
+
+          <div className={styles.whyChooseList}>
+            {WHY_CHOOSE.map((item, idx) => (
+              <Reveal key={item.title} stagger={idx} className={styles.whyChooseItem}>
+                <div className={styles.whyChooseTitle}>
+                  <span className={styles.accentMarker}>✦</span>
+                  <span>{item.title}</span>
+                </div>
+                <div className={styles.whyChooseDesc}>
+                  {item.desc}
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 8. Founder Block ────────────────────────────────── */}
+      <section className={styles.founderSection}>
+        <div className="container">
+          <Reveal className={`label ${styles.sectionLabel}`}>(LEADERSHIP)</Reveal>
+          <Reveal delay={80}>
+            <h2 className={styles.founderName}>{founder.name}</h2>
+          </Reveal>
+          <Reveal delay={120}>
+            <p className={`label ${styles.founderRole}`}>{founder.role}</p>
+          </Reveal>
+          <Reveal delay={160} className={styles.founderLinkWrap}>
+            <a href={`mailto:${email}`} className={styles.founderEmailLink}>
+              Write to Brij →
+            </a>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ── 9. Capabilities list (9 services) ───────────────── */}
       <section className={styles.capabilitiesSection}>
         <div className="container">
           <div className={styles.capabilitiesGrid}>
@@ -151,7 +254,7 @@ export default function About() {
               <span className={`label ${styles.sectionLabel}`}>WHAT WE BUILD</span>
               <h2 className={styles.capTitle}>Our capabilities.</h2>
               <p className={styles.capIntro}>
-                Eight service areas, all connected by the same goal: helping
+                Nine service areas, all connected by the same goal: helping
                 businesses operate more intelligently through well-built software.
               </p>
               <Button to="/services" variant="secondary" arrow>
@@ -171,7 +274,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* ── Contact strip ─────────────────────────────────── */}
+      {/* ── 10. Contact strip ───────────────────────────────── */}
       <section className={styles.contactStrip}>
         <div className="container">
           <Reveal className={styles.contactRow}>
@@ -197,7 +300,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* ── CTA ───────────────────────────────────────────── */}
+      {/* ── 11. CTA ─────────────────────────────────────────── */}
       <CTASection
         label="WORK WITH US"
         title="Ready to build something that works?"

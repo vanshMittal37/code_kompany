@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowUp } from 'lucide-react';
-import { wordmark, legalName, email, phone, phoneHref, whatsappHref, location, navigation } from '../../config/site';
+import { wordmark, legalName, email, phone, phoneHref, whatsappHref, location, navigation, footerTagline, socials } from '../../config/site';
 import Button from '../Button/Button';
 import Logo from '../Logo/Logo';
 import { Reveal } from '../Reveal/Reveal';
@@ -38,6 +38,9 @@ export default function Footer({ hideCta = false }) {
             <p className={styles.descText}>
               An AI-native software studio in Vadodara, India, building custom software, AI agents and digital systems.
             </p>
+            {footerTagline && (
+              <p className={styles.taglineText}>{footerTagline}</p>
+            )}
           </div>
 
           {/* Column 2 */}
@@ -73,6 +76,13 @@ export default function Footer({ hideCta = false }) {
                   WhatsApp
                 </a>
               </li>
+              {socials?.linkedin && (
+                <li>
+                  <a href={socials.linkedin} target="_blank" rel="noopener noreferrer" className={styles.footerLink}>
+                    LinkedIn
+                  </a>
+                </li>
+              )}
               <li className={styles.locationText}>{location.display}</li>
             </ul>
           </div>

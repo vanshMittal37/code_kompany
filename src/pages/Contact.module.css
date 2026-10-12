@@ -148,3 +148,13 @@
   color: var(--muted);
   line-height: 1.6;
 }
+
+.reachWrap {
+  padding-block: var(--space-2);
+}
+
+.reachLine {
+  font-size: var(--fs-small);
+  color: var(--muted);
+  line-height: 1.5;
+}

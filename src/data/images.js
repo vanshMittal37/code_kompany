@@ -67,6 +67,10 @@ export const softwareDevelopment = entry('services/software-development', {
   alt: 'Stacked dark glass interface panels in perspective with an orange-lit active panel, representing modular software development',
   fallback: 'gradient-dark',
 });
+export const websiteDevelopment = entry('services/website-development', {
+  alt: 'Dark monitor and laptop showing abstract website layouts, representing website development',
+  fallback: 'gradient-dark',
+});
 export const mobileApp = entry('services/mobile-app', {
   alt: 'Two dark smartphones on a matte plinth with abstract blurred app UI and orange accents, representing mobile app development',
   fallback: 'gradient-dark',
@@ -191,7 +195,7 @@ export const aboutMindset = entry('about/mindset', {
  */
 export const allImages = {
   heroDark, heroLight, heroMobileDark, heroMobileLight,
-  aiAgents, softwareDevelopment, mobileApp, cloudSolutions,
+  aiAgents, softwareDevelopment, websiteDevelopment, mobileApp, cloudSolutions,
   digitalTransformation, mvpDevelopment, ecommerce, industrySolutions,
   aiCoreWide, ctaRibbon, introWide, notFound, ogBg,
   project01, project02, project03, project04, project05, project06,

@@ -112,6 +112,15 @@
   margin-bottom: var(--space-7);
 }
 
+.chapterIntroLine {
+  font-size: var(--fs-body);
+  color: var(--muted);
+  max-width: 55ch;
+  line-height: 1.6;
+  margin-top: calc(-1 * var(--space-4));
+  margin-bottom: var(--space-7);
+}
+
 .chapterVisualWide {
   margin-bottom: var(--space-8);
 }

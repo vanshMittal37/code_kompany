@@ -59,6 +59,16 @@
   max-width: 48ch;
 }
 
+.hubNote {
+  color: #8F8D87;
+  font-size: var(--fs-body);
+  text-align: center;
+  margin-top: var(--space-6);
+  max-width: 60ch;
+  margin-inline: auto;
+  line-height: 1.5;
+}
+
 .buttonWrap {
   margin-top: var(--space-8);
   display: flex;

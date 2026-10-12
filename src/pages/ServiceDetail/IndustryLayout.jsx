@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Check } from 'lucide-react';
-import { getNextService } from '../../data/services';
+import { getNextService, TOTAL_SERVICES } from '../../data/services';
 import Breadcrumb from '../../components/Breadcrumb/Breadcrumb';
 import ImageBlock from '../../components/ImageBlock/ImageBlock';
 import Tag from '../../components/Tag/Tag';
 import Button from '../../components/Button/Button';
+import TierCards from '../../components/TierCards/TierCards';
 import CTASection from '../../components/CTASection/CTASection';
 import { Reveal, SplitReveal } from '../../components/Reveal/Reveal';
 import { useReducedMotion } from '../../hooks/useReducedMotion';
@@ -118,6 +119,11 @@ export default function IndustryLayout({ service }) {
               <SplitReveal as="h2" className={styles.chapterHeadline}>
                 {service.chapters[0].headline}
               </SplitReveal>
+              {service.chapters[0].introLine && (
+                <Reveal delay={80}>
+                  <p className={styles.chapterIntroLine}>{service.chapters[0].introLine}</p>
+                </Reveal>
+              )}
 
               <div className={styles.chapterVisualWide}>
                 <ImageBlock
@@ -142,6 +148,18 @@ export default function IndustryLayout({ service }) {
                   );
                 })}
               </div>
+
+              {/* Choose your fit tiers */}
+              {service.chapters[0].tiers && (
+                <TierCards
+                  tiers={service.chapters[0].tiers}
+                  sectionIndex="01"
+                  sectionLabel="CHOOSE YOUR FIT"
+                  title="Manufacturing ERP Tiers"
+                  subtitle="Choose the system built for your production scale."
+                  contactService="industry-solutions"
+                />
+              )}
 
               <div className={styles.chapterCtaWrap}>
                 <Button to="/contact?service=industry-solutions" variant="primary" size="md" arrow>
@@ -173,6 +191,11 @@ export default function IndustryLayout({ service }) {
                   <SplitReveal as="h2" className={styles.chapterHeadline}>
                     {service.chapters[1].headline}
                   </SplitReveal>
+                  {service.chapters[1].introLine && (
+                    <Reveal delay={80}>
+                      <p className={styles.chapterIntroLine}>{service.chapters[1].introLine}</p>
+                    </Reveal>
+                  )}
 
                   <div className={styles.featuresList}>
                     {service.chapters[1].features.map((feat, idx) => (
@@ -190,6 +213,18 @@ export default function IndustryLayout({ service }) {
                   </div>
                 </div>
               </div>
+
+              {/* Choose your fit tiers */}
+              {service.chapters[1].tiers && (
+                <TierCards
+                  tiers={service.chapters[1].tiers}
+                  sectionIndex="02"
+                  sectionLabel="CHOOSE YOUR FIT"
+                  title="Healthcare System Tiers"
+                  subtitle="Tailored configurations for clinical care and hospital operations."
+                  contactService="industry-solutions"
+                />
+              )}
             </div>
           </section>
         )}
@@ -204,6 +239,11 @@ export default function IndustryLayout({ service }) {
               <SplitReveal as="h2" className={styles.chapterHeadline}>
                 {service.chapters[2].headline}
               </SplitReveal>
+              {service.chapters[2].introLine && (
+                <Reveal delay={80}>
+                  <p className={styles.chapterIntroLine}>{service.chapters[2].introLine}</p>
+                </Reveal>
+              )}
 
               <div className={styles.chapterVisualWide}>
                 <ImageBlock
@@ -228,6 +268,18 @@ export default function IndustryLayout({ service }) {
                   );
                 })}
               </div>
+
+              {/* Solutions blocks */}
+              {service.chapters[2].tiers && (
+                <TierCards
+                  tiers={service.chapters[2].tiers}
+                  sectionIndex="03"
+                  sectionLabel="CHOOSE YOUR FIT"
+                  title="PropTech Solutions"
+                  subtitle="Platforms and management systems designed to scale real estate operations."
+                  contactService="industry-solutions"
+                />
+              )}
 
               <div className={styles.chapterCtaWrap}>
                 <Button to="/contact?service=industry-solutions" variant="primary" size="md" arrow>
@@ -256,7 +308,7 @@ export default function IndustryLayout({ service }) {
           <Link to={`/services/${nextService.slug}`} className={styles.nextCard}>
             <div className={styles.nextMeta}>
               <span className="label">NEXT SERVICE</span>
-              <span className="label">{nextService.number} / 08</span>
+              <span className="label">{nextService.number} / {String(TOTAL_SERVICES).padStart(2, '0')}</span>
             </div>
             <h2 className={styles.nextTitle}>{nextService.name}</h2>
             <div className={styles.nextVisualWrap}>

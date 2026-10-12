@@ -26,6 +26,19 @@ export default function ServiceDetail() {
         title={service.seo.title}
         description={service.seo.description}
         path={`/services/${service.slug}`}
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          name: service.name,
+          description: service.seo.description,
+          provider: {
+            '@type': 'Organization',
+            name: 'Code Kompany',
+            url: 'https://codekompany.com',
+          },
+          serviceType: service.name,
+          url: `https://codekompany.com/services/${service.slug}`,
+        }}
       />
 
       {service.layout === 'industry' ? (

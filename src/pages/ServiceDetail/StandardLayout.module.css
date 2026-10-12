@@ -227,9 +227,52 @@
 }
 
 /* Technologies */
+.introExtra {
+  font-size: var(--fs-body);
+  color: var(--foreground);
+  margin-top: var(--space-3);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.buildApproach {
+  font-size: var(--fs-body);
+  color: var(--muted);
+  margin-top: var(--space-6);
+  max-width: 55ch;
+  line-height: 1.5;
+}
+
+.valueClosing {
+  font-size: clamp(1.1rem, 1.4vw + 0.6rem, 1.35rem);
+  color: var(--accent);
+  font-weight: 600;
+  margin-top: var(--space-7);
+  letter-spacing: -0.01em;
+}
+
+/* Technologies / Vendor Agnostic */
 .techSection {
   background-color: var(--background);
   border-top: 1px solid var(--border);
+}
+
+.techBigLine {
+  font-size: var(--fs-h2);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--foreground);
+  max-width: 34ch;
+  margin-bottom: var(--space-3);
+}
+
+.techMutedLine {
+  font-size: var(--fs-body);
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 54ch;
+  margin-bottom: var(--space-6);
 }
 
 .techPillRow {

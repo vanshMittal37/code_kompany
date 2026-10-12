@@ -7,14 +7,54 @@ import styles from './ContactForm.module.css';
 const SERVICES = [
   'AI Agents & Automation',
   'Software Development',
+  'Website Development',
   'Mobile App Development',
   'Cloud Solutions',
   'Digital Transformation',
   'MVP Development',
-  'E-Commerce Solutions',
+  'E-Commerce',
   'Industry Solutions',
-  'Other / Not sure yet',
 ];
+
+const PACKAGES = [
+  { id: 'startup-launch', label: 'Packages — Startup Launch Bundle' },
+  { id: 'small-business-digital', label: 'Packages — Small Business Digital Package' },
+  { id: 'growth-accelerator', label: 'Packages — Growth Accelerator Bundle' },
+];
+
+const SERVICE_SLUG_MAP = {
+  'ai-agents': 'AI Agents & Automation',
+  'software-development': 'Software Development',
+  'website-development': 'Website Development',
+  'mobile-app-development': 'Mobile App Development',
+  'cloud-solutions': 'Cloud Solutions',
+  'digital-transformation': 'Digital Transformation',
+  'mvp-development': 'MVP Development',
+  'ecommerce': 'E-Commerce',
+  'industry-solutions': 'Industry Solutions',
+};
+
+const PACKAGE_SLUG_MAP = {
+  'startup-launch': 'Packages — Startup Launch Bundle',
+  'small-business-digital': 'Packages — Small Business Digital Package',
+  'growth-accelerator': 'Packages — Growth Accelerator Bundle',
+};
+
+function resolvePreSelected(serviceParam = '', packageParam = '') {
+  if (packageParam && PACKAGE_SLUG_MAP[packageParam]) {
+    return PACKAGE_SLUG_MAP[packageParam];
+  }
+  if (serviceParam && SERVICE_SLUG_MAP[serviceParam]) {
+    return SERVICE_SLUG_MAP[serviceParam];
+  }
+  if (serviceParam) {
+    const match = SERVICES.find((s) => s.toLowerCase() === serviceParam.toLowerCase());
+    if (match) return match;
+    const pkgMatch = PACKAGES.find((p) => p.label.toLowerCase() === serviceParam.toLowerCase());
+    if (pkgMatch) return pkgMatch.label;
+  }
+  return '';
+}
 
 const BUDGETS = [
   'Under ₹2 Lakh',
@@ -34,9 +74,10 @@ const INITIAL = {
   _honey: '', // honeypot — never filled by real users
 };
 
-export default function ContactForm({ preService = '' }) {
+export default function ContactForm({ preService = '', prePackage = '' }) {
   const uid = useId();
-  const [values, setValues] = useState({ ...INITIAL, service: preService });
+  const initialService = resolvePreSelected(preService, prePackage);
+  const [values, setValues] = useState({ ...INITIAL, service: initialService });
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState('idle'); // idle | sending | success | error
   const [serverError, setServerError] = useState('');
@@ -218,6 +259,12 @@ export default function ContactForm({ preService = '' }) {
             {SERVICES.map((s) => (
               <option key={s} value={s}>{s}</option>
             ))}
+            <optgroup label="Packages">
+              {PACKAGES.map((p) => (
+                <option key={p.id} value={p.label}>{p.label}</option>
+              ))}
+            </optgroup>
+            <option value="Other">Other</option>
           </select>
           {errors.service && (
             <span id={errorId('service')} className={styles.fieldError} role="alert">

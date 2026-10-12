@@ -1,11 +1,13 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, ArrowRight } from 'lucide-react';
-import { services } from '../data/services';
+import { ArrowUpRight, ArrowRight, Check } from 'lucide-react';
+import { services, TOTAL_SERVICES_LABEL } from '../data/services';
+import { packages } from '../data/packages';
 import { whatsappHref } from '../config/site';
 import Seo from '../components/Seo/Seo';
 import ImageBlock from '../components/ImageBlock/ImageBlock';
 import Tag from '../components/Tag/Tag';
+import Button from '../components/Button/Button';
 import CTASection from '../components/CTASection/CTASection';
 import { Reveal, SplitReveal } from '../components/Reveal/Reveal';
 import { useMediaQuery, HOVER_CAPABLE } from '../hooks/useMediaQuery';
@@ -78,7 +80,7 @@ export default function Services() {
         <section className={`section ${styles.heroSection}`}>
           <div className="container">
             <Reveal className={`label ${styles.topLabel}`}>
-              (SERVICES) — 8 CAPABILITIES
+              (SERVICES) — {TOTAL_SERVICES_LABEL}
             </Reveal>
 
             <SplitReveal as="h1" className="display">
@@ -227,6 +229,67 @@ export default function Services() {
                 ))}
               </div>
             )}
+          </div>
+        </section>
+
+        {/* Section 2.5 — Packages to get you moving */}
+        <section className={`section ${styles.packagesSection}`}>
+          <div className="container">
+            <Reveal className={`label ${styles.packagesLabel}`}>
+              (PACKAGES)
+            </Reveal>
+
+            <SplitReveal as="h2" className={styles.packagesTitle}>
+              Packages to get you moving.
+            </SplitReveal>
+
+            <div className={styles.packagesGrid}>
+              {packages.map((pkg, idx) => {
+                const isScaling = Boolean(pkg.badge);
+                return (
+                  <Reveal
+                    key={pkg.id}
+                    stagger={idx}
+                    className={`${styles.packageCard} ${isScaling ? styles.packageScalingCard : ''}`}
+                  >
+                    <div className={styles.packageHeader}>
+                      <div className={styles.packageBadgeRow}>
+                        {pkg.badge && <Tag variant="accent">{pkg.badge}</Tag>}
+                      </div>
+                      <h3 className={styles.packageName}>{pkg.name}</h3>
+                      <p className={styles.packageForWho}>{pkg.forWho}</p>
+                    </div>
+
+                    <ul className={styles.packageIncludesList}>
+                      {pkg.includes.map((inc, iIdx) => (
+                        <li key={iIdx} className={styles.packageIncludeItem}>
+                          <Check size={16} className={styles.packageCheckIcon} />
+                          <span>{inc}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className={styles.packageFooter}>
+                      <span className={styles.supportTag}>{pkg.support}</span>
+                      <Button
+                        to={`/contact?package=${pkg.id}`}
+                        variant={isScaling ? 'primary' : 'secondary'}
+                        size="md"
+                        arrow
+                      >
+                        Ask about this package
+                      </Button>
+                    </div>
+                  </Reveal>
+                );
+              })}
+            </div>
+
+            <Reveal delay={120}>
+              <p className={styles.packagesNote}>
+                Every package is scoped to your business after a discovery call.
+              </p>
+            </Reveal>
           </div>
         </section>
 

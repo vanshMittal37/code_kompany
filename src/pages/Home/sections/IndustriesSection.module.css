@@ -139,6 +139,13 @@
   color: #FFFFFF;
 }
 
+.carouselLine {
+  font-size: var(--fs-small);
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: var(--space-1);
+  line-height: 1.35;
+}
+
 .carouselArrow {
   color: var(--accent);
 }

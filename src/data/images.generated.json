@@ -29,6 +29,15 @@
     "aspectRatio": 1,
     "lqip": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAAAwBACdASoYABgAPxF+tVWsJ6SpKAgBgCIJYwDG9BEcy1vv+H/E3FD5sQAA/u6OX084K9SvmVGy3WTQWOYhT9AsQL4HpIO9sAm3GR4vLqKERrs/sAAAAA=="
   },
+  "brand/logo-original": {
+    "widths": [
+      377
+    ],
+    "width": 377,
+    "height": 661,
+    "aspectRatio": 0.5703,
+    "lqip": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAACQBACdASoYACoAPxF0sFCsJqSitVQIAYAiCWkAA+NLefwIfkS5Cwon2SoagkAA/vNodmRjFvX7FRDyBYHsd1saRkwLUrKA+AuklrMklw1blwXkpeeeBxhUq4LXeI8389ofgAAA"
+  },
   "cta/cta-ribbon": {
     "widths": [
       640,
@@ -308,5 +317,15 @@
     "height": 1024,
     "aspectRatio": 1,
     "lqip": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAAAQBACdASoYABgAPxGAuFWsKCUjKAgBgCIJZQDGQBDPvU/YhtRRMhIWAAD+6+H+2Y3J46FzTf58NADPsu5EPKgXmUhT7o1dJgEQRNFY7CkMvo8SejOEQjYqogPWhX2U4t8tO92kAAA="
+  },
+  "services/website-development": {
+    "widths": [
+      640,
+      1024
+    ],
+    "width": 1024,
+    "height": 1024,
+    "aspectRatio": 1,
+    "lqip": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAACwBACdASoYABgAPxFys1KsJiSisBgIAYAiCWYAwO3/4BYskrB/2fVr0YZQwHgAAP7o8ODaUYfw+D2Q6dYXp7Pcoo5ngc5nbrfghYpLahGpAro67wtN6udnRFXh0npNAfNrhqYG8wlwLZCEcEjnx2KRA1mwAzlQu37UR5l4gLrl0tlze9ipVJT4NKQAAA=="
   }
 }

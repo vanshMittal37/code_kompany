@@ -6,8 +6,17 @@ import { useReducedMotion } from '../../hooks/useReducedMotion';
 import { useInView } from '../../hooks/useInView';
 import styles from './AIHub.module.css';
 
+const NODE_POSITIONS = [
+  { x: 300, y: 65,  left: '300px', top: '65px' },
+  { x: 495, y: 155, left: '495px', top: '155px' },
+  { x: 495, y: 345, left: '495px', top: '345px' },
+  { x: 300, y: 435, left: '300px', top: '435px' },
+  { x: 105, y: 345, left: '105px', top: '345px' },
+  { x: 105, y: 155, left: '105px', top: '155px' },
+];
+
 export default function AIHub({ className = '' }) {
-  const [activeId, setActiveId] = useState('ai-agents');
+  const [activeId, setActiveId] = useState(aiCapabilities[0]?.id || 'ai-chatbots');
   const [userInteracted, setUserInteracted] = useState(false);
 
   const isDesktop = useMediaQuery(DESKTOP_BREAK);
@@ -59,15 +68,10 @@ export default function AIHub({ className = '' }) {
           {/* Left Diagram */}
           <div className={styles.diagramWrap}>
             <svg viewBox="0 0 600 500" className={styles.svgLines} aria-hidden="true">
-              {/* Connection lines from center (300,250) to 5 node positions */}
-              {[
-                { x: 300, y: 70 },   // top
-                { x: 520, y: 180 },  // right top
-                { x: 470, y: 400 },  // right bottom
-                { x: 130, y: 400 },  // left bottom
-                { x: 80,  y: 180 },  // left top
-              ].map((pos, idx) => {
+              {/* Connection lines from center (300,250) to 6 node positions */}
+              {NODE_POSITIONS.map((pos, idx) => {
                 const cap = aiCapabilities[idx];
+                if (!cap) return null;
                 const isActive = cap.id === activeId;
                 return (
                   <g key={cap.id}>
@@ -89,15 +93,10 @@ export default function AIHub({ className = '' }) {
               <span className="label">{aiCenterNode}</span>
             </div>
 
-            {/* 5 Satellite Nodes */}
-            {[
-              { x: '300px', y: '70px',  idx: 0 },
-              { x: '520px', y: '180px', idx: 1 },
-              { x: '470px', y: '400px', idx: 2 },
-              { x: '130px', y: '400px', idx: 3 },
-              { x: '80px',  y: '180px', idx: 4 },
-            ].map((pos) => {
-              const cap = aiCapabilities[pos.idx];
+            {/* 6 Satellite Nodes */}
+            {NODE_POSITIONS.map((pos, idx) => {
+              const cap = aiCapabilities[idx];
+              if (!cap) return null;
               const isActive = cap.id === activeId;
               return (
                 <button
@@ -106,10 +105,10 @@ export default function AIHub({ className = '' }) {
                   aria-pressed={isActive}
                   tabIndex={isActive ? 0 : -1}
                   className={`${styles.nodeBtn} ${isActive ? styles.nodeBtnActive : ''}`}
-                  style={{ left: pos.x, top: pos.y }}
+                  style={{ left: pos.left, top: pos.top }}
                   onClick={() => handleSelectNode(cap.id)}
                   onFocus={() => handleSelectNode(cap.id)}
-                  onKeyDown={(e) => handleKeyDown(e, pos.idx)}
+                  onKeyDown={(e) => handleKeyDown(e, idx)}
                 >
                   <span className={styles.nodeDot} />
                   <span className={styles.nodeName}>{cap.name}</span>

@@ -14,9 +14,11 @@ import ProcessTrack from '../../components/ProcessTrack/ProcessTrack';
 const tickerItems = [
   'AI AGENTS',
   'CUSTOM SOFTWARE',
+  'WEBSITES',
   'MOBILE APPS',
   'CLOUD',
   'AUTOMATION',
+  'ERP',
   'DIGITAL TRANSFORMATION',
   'MVP',
   'E-COMMERCE',

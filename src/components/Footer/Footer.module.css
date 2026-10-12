@@ -59,6 +59,13 @@
   max-width: 38ch;
 }
 
+.taglineText {
+  color: var(--foreground);
+  font-size: var(--fs-small);
+  margin-top: var(--space-2);
+  font-weight: 500;
+}
+
 .colLabel {
   display: block;
   margin-bottom: var(--space-4);

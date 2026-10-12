@@ -2,7 +2,7 @@ import { useSearchParams } from 'react-router-dom';
 import Seo from '../components/Seo/Seo';
 import { SplitReveal, Reveal } from '../components/Reveal/Reveal';
 import ContactForm from '../components/ContactForm/ContactForm';
-import { email, whatsappHref, location } from '../config/site';
+import { email, whatsappHref, location, socials, reach } from '../config/site';
 import styles from './Contact.module.css';
 
 /* ── Contact detail tiles ───────────────────────────────── */
@@ -20,17 +20,29 @@ const CONTACT_ITEMS = [
     desc: "Prefer a quick message? We're on WhatsApp.",
     external: true,
   },
+  ...(socials?.linkedin
+    ? [
+        {
+          label: 'LINKEDIN',
+          value: 'LinkedIn',
+          href: socials.linkedin,
+          desc: 'Connect with us on LinkedIn',
+          external: true,
+        },
+      ]
+    : []),
   {
     label: 'LOCATION',
     value: location.display,
     href: null,
-    desc: 'Serving clients across India and globally',
+    desc: 'Vadodara, Gujarat, India',
   },
 ];
 
 export default function Contact() {
   const [searchParams] = useSearchParams();
   const preService = searchParams.get('service') || '';
+  const prePackage = searchParams.get('package') || '';
 
   return (
     <>
@@ -64,7 +76,7 @@ export default function Contact() {
             {/* Form column */}
             <div className={styles.formCol}>
               <Reveal>
-                <ContactForm preService={preService} />
+                <ContactForm preService={preService} prePackage={prePackage} />
               </Reveal>
             </div>
 
@@ -91,6 +103,10 @@ export default function Contact() {
                     <p className={styles.contactDesc}>{item.desc}</p>
                   </div>
                 ))}
+              </Reveal>
+
+              <Reveal delay={80} className={styles.reachWrap}>
+                <p className={styles.reachLine}>📍 {reach}</p>
               </Reveal>
 
               {/* What to expect */}

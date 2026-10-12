@@ -21,6 +21,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://codekompany.com/services/website-development</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://codekompany.com/services/mobile-app-development</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

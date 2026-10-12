@@ -1,4 +1,4 @@
-﻿# Code Kompany — Image Guide & Art Direction
+# Code Kompany — Image Guide & Art Direction
 
 > Re-read this guide before generating, replacing or adding any image to the project.
 
@@ -41,6 +41,7 @@ Append the following text verbatim to EVERY image prompt (except hero-light, whi
 |---|---|
 | `services/ai-agents` | Glowing orange core sphere, orbiting glass nodes, thin light paths with pulses — MOST striking image |
 | `services/software-development` | Stacked dark glass UI panels in perspective, abstract blurred UI blocks, orange highlight on active panel |
+| `services/website-development` | A sleek dark monitor and a laptop on a matte black desk, both showing abstract blurred website layouts with orange accent sections, soft studio light, minimal composition |
 | `services/mobile-app` | Two dark smartphones at angles, abstract blurred app layouts, orange accents, studio light |
 | `services/cloud-solutions` | Stacked translucent server slabs rising like a tower, vertical light streams, misty atmosphere |
 | `services/digital-transformation` | Scattered grid cells morphing into neat glowing grid, dark studio |

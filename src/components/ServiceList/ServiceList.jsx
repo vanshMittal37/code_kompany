@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
-import { services } from '../../data/services';
+import { services, TOTAL_SERVICES } from '../../data/services';
 import SectionHeader from '../SectionHeader/SectionHeader';
 import ImageBlock from '../ImageBlock/ImageBlock';
 import Tag from '../Tag/Tag';
@@ -87,7 +87,7 @@ export default function ServiceList({ showHeader = true, className = '' }) {
                   ratio="4/5"
                   reveal={false}
                   framed="always"
-                  caption={`${activeService.number} / 08 — ${activeService.name}`}
+                  caption={`${activeService.number} / ${String(TOTAL_SERVICES).padStart(2, '0')} — ${activeService.name}`}
                   className={styles.stickyImage}
                 />
               </div>

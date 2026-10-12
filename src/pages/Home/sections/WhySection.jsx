@@ -15,18 +15,18 @@ const whyItems = [
   },
   {
     num: '03',
-    title: 'Scalable architecture',
-    desc: 'Systems designed to grow with you.',
+    title: 'End-to-end delivery',
+    desc: 'From first consultation to deployment and ongoing support.',
   },
   {
     num: '04',
-    title: 'Business-focused development',
-    desc: 'Every feature tied to a business outcome.',
+    title: 'Scalable architecture',
+    desc: 'Systems designed to grow with your business.',
   },
   {
     num: '05',
-    title: 'Modern user experiences',
-    desc: 'Interfaces people enjoy using.',
+    title: 'Transparent communication',
+    desc: 'Regular updates, clear timelines and realistic expectations.',
   },
 ];
 

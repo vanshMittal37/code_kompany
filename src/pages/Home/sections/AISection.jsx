@@ -40,6 +40,12 @@ export default function AISection() {
           <AIHub />
         </Reveal>
 
+        <Reveal delay={240}>
+          <p className={styles.hubNote}>
+            AI-powered solutions that streamline operations, automate repetitive tasks and improve decision-making.
+          </p>
+        </Reveal>
+
         <Reveal delay={280} className={styles.buttonWrap}>
           <Button to="/services/ai-agents" variant="primary" size="lg" arrow magnetic>
             Explore AI Agents & Automation

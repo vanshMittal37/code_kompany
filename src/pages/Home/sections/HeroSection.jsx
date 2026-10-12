@@ -140,7 +140,7 @@ export default function HeroSection() {
 
             <Reveal delay={120} className={styles.supportWrap}>
               <p className={styles.supportText}>
-                Code Kompany is an AI-native software studio building custom software, AI agents and digital systems that help businesses automate operations and grow.
+                From ERP systems to AI automation, Code Kompany builds scalable software, AI agents and websites tailored to your business goals.
               </p>
             </Reveal>
 

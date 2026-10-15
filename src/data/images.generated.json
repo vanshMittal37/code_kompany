@@ -8,8 +8,7 @@
     ],
     "width": 2400,
     "height": 1600,
-    "aspectRatio": 1.5,
-    "lqip": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAADQAwCdASoYABAAPxF6tFAsKCUisAgBgCIJYwC7AB42cQJgDUUN40gA+TsFVE3nV8s5AVl9WtfJp3uA5d1uTrCFqaArzPqKxggTYE+FbFvjg9Q2C+9y4x8XjtwV0MqGmUHjtvYjcrBrXAOXdz4gL8wAAAA="
+    "aspectRatio": 1.5
   },
   "about/studio": {
     "widths": [
@@ -20,8 +19,7 @@
     ],
     "width": 2400,
     "height": 1600,
-    "aspectRatio": 1.5,
-    "lqip": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAABQBACdASoYABAAPxFysFAsJqSisAgBgCIJZQDE2B8kRXfzu+v/6+w56cqwAP6i7hMuyCdQSsembZQcOw7kKQNPc+HOiH4XGO2ikS/zUvq+YaPmX9XIKnTEYu3g7FM07theW6Qo8doK2LIAu43kTfe0yK8X9i8xjtjudeeXRtDoIgAA"
+    "aspectRatio": 1.5
   },
   "ai/ai-core-wide": {
     "widths": [
@@ -32,17 +30,7 @@
     ],
     "width": 2400,
     "height": 1600,
-    "aspectRatio": 1.5,
-    "lqip": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAACQAwCdASoYABAAPxFysFAsJqSisAgBgCIJYgAAUrlRq4wBRRdwAP5+UE1fivl8DWBqsNrgPy4CNJveaooX23mvODlTmV5nXkDRMIr5TwS1vONcT67R8BV9eDYw3Ty/qZVZdxBqrrIxhLEQIVExaHo+4AA="
-  },
-  "brand/logo-original": {
-    "widths": [
-      377
-    ],
-    "width": 377,
-    "height": 661,
-    "aspectRatio": 0.5703,
-    "lqip": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAACQBACdASoYACoAPxF0sFCsJqSitVQIAYAiCWkAA+NLefwIfkS5Cwon2SoagkAA/vNodmRjFvX7FRDyBYHsd1saRkwLUrKA+AuklrMklw1blwXkpeeeBxhUq4LXeI8389ofgAAA"
+    "aspectRatio": 1.5
   },
   "cta/cta-ribbon": {
     "widths": [
@@ -53,18 +41,7 @@
     ],
     "width": 2400,
     "height": 1600,
-    "aspectRatio": 1.5,
-    "lqip": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADwAwCdASoYABAAPxF2sVCsJySisAgBgCIJQBOgBDrsYiCfIe5s1GFgAP7r2Lu2bmtrCDg4KW982Bwmpv6jnjV2BKGeD3dcvGslUXTUK8Fw++4E4mgAAA=="
-  },
-  "cta/not-found": {
-    "widths": [
-      640,
-      1024
-    ],
-    "width": 1024,
-    "height": 1024,
-    "aspectRatio": 1,
-    "lqip": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADwAgCdASoYABgAPxF+slSsKCokKAqpgCIJZwAAOuOOAAD+7rfN4Jni+/OkdLku7xWURLLos8jl3QAA"
+    "aspectRatio": 1.5
   },
   "hero/hero-dark": {
     "widths": [
@@ -75,8 +52,7 @@
     ],
     "width": 2400,
     "height": 1644,
-    "aspectRatio": 1.4599,
-    "lqip": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAQBACdASoYABAAPxGCtFIsKaUisAgBgCIJZQDE2Glf4ntr//VmmsODQAD++cG29NZQ94lQNou+iFK31x+H/6hJR1mNfCyWaS2NMEaDCFEnesEQqvoynSaHSM6pGAAA"
+    "aspectRatio": 1.4599
   },
   "hero/hero-mobile-dark": {
     "widths": [
@@ -87,8 +63,7 @@
     ],
     "width": 2400,
     "height": 3600,
-    "aspectRatio": 0.6667,
-    "lqip": "data:image/webp;base64,UklGRs4AAABXRUJQVlA4IMIAAAAQBgCdASoYACQAPxF+sVMsKCQiqrgMAYAiCWIAuGmNBAADlhf/fDfbxyYvGwdnwTFxwp03plSuUywA/oc3GrDHv7VqZq1N5CncvK8oD3Q6BJ/haS+W0zQWKd1EKCUjVMn+zTcfVVxEiq4cFIA6gAEzLYhLBDumHOEJ9UaZJtOgv7Fd1Fv6nzirrqRe+Q+3DGaSx1Ukrsvt3WNApffidaehpOP/yg1G6FG7f+3xdpivqBrqikkZlvYGwDuzPnhxn6AAAA=="
+    "aspectRatio": 0.6667
   },
   "industries/ecommerce": {
     "widths": [
@@ -98,8 +73,7 @@
     ],
     "width": 1600,
     "height": 1067,
-    "aspectRatio": 1.4995,
-    "lqip": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAADwAwCdASoYABAAPxFwsFAsJiSisAgBgCIJagC7ABtFk4vxsqLD6LgAAP5AmbneFqNVQ+p7AqNnAKF4SNAIEi9zDHeTJSO5blQ7y3fXdUWgQuB6vfVUiQT+/dtfwbx7psJFYxtoN3Iiuw/RD8P4BCLcmaTGDCMBOAAl5URhdGG7RnBIdKXrLUG0b0AAAA=="
+    "aspectRatio": 1.4995
   },
   "industries/growing-business": {
     "widths": [
@@ -110,8 +84,7 @@
     ],
     "width": 2400,
     "height": 1600,
-    "aspectRatio": 1.5,
-    "lqip": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAABwBACdASoYABAAPxFysFAsJqSisAgBgCIJYwCdMoAC7o29ocTs+LuR85yqAAD5LvCNtPnx2Jj+jrO73DmHR7rlvNvwbXQwmSz4FjIdU0wfNzOgxZ3fi0hQhkvobdrjUvBcFixL5FY0CDFw0P0XZvHLUbYpeX884coFcN5+AAA="
+    "aspectRatio": 1.5
   },
   "industries/healthcare": {
     "widths": [
@@ -121,8 +94,7 @@
     ],
     "width": 1600,
     "height": 1067,
-    "aspectRatio": 1.4995,
-    "lqip": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAAAwBACdASoYABAAPxFysFAsJqSisAgBgCIJYwDA3YvqmfJIZqVxcbP5cSAA/snd1i4hK4qsodt6ZX87Y3M7cFnbFKVdDI5I0ou50wDE23xUw7nVgNPtdLDFRGMrdEjzcXuNb4fdBtctfTWXB7O/asS9pw20d1cu0ud7I6Ns9NnV0EDZUKHZazz/lpaUgm4u5FAldbKAqd1Cfwj3Qr0mjfnlLOAAAA=="
+    "aspectRatio": 1.4995
   },
   "industries/manufacturing": {
     "widths": [
@@ -133,8 +105,7 @@
     ],
     "width": 2400,
     "height": 1601,
-    "aspectRatio": 1.4991,
-    "lqip": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAADQAwCdASoYABAAPxFysFAsJqSisAgBgCIJQBOmUABCNe8WcuOJtuAA/qnK43TjYAZL/XoV+KySJTlruGf2mt/tNyJQhvuHYuSLKu3Rih0tWrf2Dh2Ql4P1iSMrUy8aMJpwdINLfKLwxTmdu8pjnmVTkhP6zrMbstTkgy/zQkDpFAJhEBpJ2Y7E6bk9mnuIZg3aqNI0Je0urAAA"
+    "aspectRatio": 1.4991
   },
   "industries/real-estate": {
     "widths": [
@@ -144,8 +115,7 @@
     ],
     "width": 1600,
     "height": 1067,
-    "aspectRatio": 1.4995,
-    "lqip": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAABQBACdASoYABAAPxFysFAsJqSisAgBgCIJYwCdACPqSyPL3CxGOaBhskIAAPk6KD6TqkVY8hbPdTn6ds1MvpVCek9f4eTAPBG637xrUz/zAmV6hp7CEidV74MiEJ7YtGcaP4ztiAw1SR/12IzYpMKckCtGAkZpbPFzvv4leGmEk/5PB6MOEM1/YxxRS5Z4AAA="
+    "aspectRatio": 1.4995
   },
   "industries/startups": {
     "widths": [
@@ -156,8 +126,7 @@
     ],
     "width": 2400,
     "height": 1600,
-    "aspectRatio": 1.5,
-    "lqip": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAABwAwCdASoYABAAPxFwsFAsJiSisAgBgCIJZgAAP+X6b9atF4AA/qae6evU2iAqVzD26Jkrl8SXxd/mxgefB3NKZghXniSzJQxKy9mcwAZnFx/HeTsG2Tlrdm3SoFadjUUeDmurXcvJ4bwWTzAr3aDM09TMGl+gjkspgRafKO2Lx4AA"
+    "aspectRatio": 1.5
   },
   "intro/intro-wide": {
     "widths": [
@@ -168,20 +137,7 @@
     ],
     "width": 2400,
     "height": 1602,
-    "aspectRatio": 1.4981,
-    "lqip": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAACwAwCdASoYABAAPxFysFAsJqSisAgBgCIJZQDE2Bg0VghKl+oAAAD+5hLizbvR8aHOBX7y9MX1glcu+YkilD+dSuDbmebNH1AjtiiyEdKZYN9dtvFN/dCc9nOm+OpbWAFIYARgAAA="
-  },
-  "og/og-bg": {
-    "widths": [
-      640,
-      1024,
-      1600,
-      2400
-    ],
-    "width": 2400,
-    "height": 1644,
-    "aspectRatio": 1.4599,
-    "lqip": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAQBACdASoYABAAPxGCtFIsKaUisAgBgCIJZQDE2Glf4ntr//VmmsODQAD++cG29NZQ94lQNou+iFK31x+H/6hJR1mNfCyWaS2NMEaDCFEnesEQqvoynSaHSM6pGAAA"
+    "aspectRatio": 1.4981
   },
   "projects/project-01": {
     "widths": [
@@ -192,8 +148,7 @@
     ],
     "width": 2400,
     "height": 1600,
-    "aspectRatio": 1.5,
-    "lqip": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAAAQBACdASoYABAAPxFysFAsJqSisAgBgCIJQBOgBDtM3T/eFJ7jEsRUoAD+xd0tlHfLEiy5vDDNEqtsDRv3mlKeTcacl7zhSErSCuEcyzxbmNMSTE+w/exVTvIJ47oc6+El4mfB8dtBne/IaoG1ZmsEbMVhb/DJGRyeItsl3Yw0qspCsAJkfwcng5JltCMSoAA="
+    "aspectRatio": 1.5
   },
   "projects/project-02": {
     "widths": [
@@ -204,8 +159,7 @@
     ],
     "width": 2400,
     "height": 2400,
-    "aspectRatio": 1,
-    "lqip": "data:image/webp;base64,UklGRvoAAABXRUJQVlA4IO4AAAAQBgCdASoYABgAPxF4sFKsJyQiqA1RgCIJQBerO4FwsnNzqJN/atn/WFYEvu/jpLRl57h9OQ6+uQAA/seCglczCUgh5DDpE22cqQiJ206gwdvQFW92FWbU9qOq8UHrQmhJUB1HZABXn3MTtzf1BASjXwRR5okZ3VtfmcMpMGaK5VwTXJiZ7f95e+vwBnTBUVE+SeYJlyyXuLMqsbtg1w9QsikPolAcw00l8k7HuxNlhBnuGD8q/4IsMPZ2ehy6FNO4O/aa+2bQ8Z/zEfwK+Sm6fRifsr4tkAyR6asloTScX5mSjFsCZiDz93ILMJgA"
+    "aspectRatio": 1
   },
   "projects/project-03": {
     "widths": [
@@ -216,8 +170,7 @@
     ],
     "width": 2400,
     "height": 1600,
-    "aspectRatio": 1.5,
-    "lqip": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAABwAwCdASoYABAAPxFysFAsJqSisAgBgCIJYgCo9Bdurr5wbqAAzjrUbTNYfDa/FONqnURdjcgujo/Ie48ZhzD4WgE2N0X5oA+Vm2xJPPZVcc0Qk4Qf4Dm9HHRTUSz49GIFlVOvUArbiOYwODzyCNvVgAA="
+    "aspectRatio": 1.5
   },
   "projects/project-04": {
     "widths": [
@@ -228,8 +181,7 @@
     ],
     "width": 2400,
     "height": 1635,
-    "aspectRatio": 1.4679,
-    "lqip": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAABwBACdASoYABAAPxFwsFAsJiSisAgBgCIJYgCdAYyUugdKBc8au+sRGXt7AAD339GaO20zutsQG9qVPxZsXx4MqsDW3F6PhbcXJJbh5+3uSyH2PJLTl0CCd2k/Dp6qDK1Bair9RpVxJzWbuGKXrYNkG1eWl8D1CAVQEVf5YmwO89YH7AjtUeiwTc8e9l+fxr4j6BVzWr9Q8/kvNhenmfMMM3BlHELGFIBCTOcLTsAAAA=="
+    "aspectRatio": 1.4679
   },
   "projects/project-05": {
     "widths": [
@@ -240,8 +192,7 @@
     ],
     "width": 2400,
     "height": 3001,
-    "aspectRatio": 0.7997,
-    "lqip": "data:image/webp;base64,UklGRjQBAABXRUJQVlA4ICgBAABQBgCdASoYAB4APxFys1MsJiSisBgIAYAiCWIAs6FICf472sb/q+uPfrfGpMDMvNABtOYWnPNc12iJoAD+8MsX70bKewfsub5ZSFS1n18abOjRXrEwGV2aADylHeiwXSADr7JEdkQXig+W+2s+wSW2URjASw4zL/V7NV1rNbPSscD1rTeRiZATuSSx+e1WuMIKgOwGymD9CJddM6Wm+tU/fvm2ja1aK6dDRXr0zEdhHS0Y3A5P8jy1ah3tQZ3NwQwKov9aPgBgzSqG9HDFtDRTqCNigzcElEEsyLGYcb/q+R9KmgCbuLejZPrgjw5AiEypI5ifGdU3w/LqcCGSgHUutqHgHwx+wf44pw2Br454L2Ls7HBjOxFze50v6FOsDlQet8S1Kw0AAA=="
+    "aspectRatio": 0.7997
   },
   "projects/project-06": {
     "widths": [
@@ -252,8 +203,7 @@
     ],
     "width": 2400,
     "height": 1602,
-    "aspectRatio": 1.4981,
-    "lqip": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAACwAwCdASoYABAAPxFysFAsJqSisAgBgCIJZwAAV/8im8nU8r/YAAD+vcGv40AkwSLadf0RG6tGKt+WHe6B4DmEe79wiAZhn6WEzxoDLxOja8TbUIAAAA=="
+    "aspectRatio": 1.4981
   },
   "services/ai-agents": {
     "widths": [
@@ -264,8 +214,7 @@
     ],
     "width": 2400,
     "height": 1599,
-    "aspectRatio": 1.5009,
-    "lqip": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAACQAwCdASoYABAAPxFysFAsJqSisAgBgCIJZwDCgCHhS+wj/kQAAP7DfAQBwcOEJ0uDei2uc9SU6k4vNRiXQpwzNX4EWfnAAAA="
+    "aspectRatio": 1.5009
   },
   "services/cloud-solutions": {
     "widths": [
@@ -275,8 +224,7 @@
     ],
     "width": 1600,
     "height": 898,
-    "aspectRatio": 1.7817,
-    "lqip": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAACwAwCdASoYAA0APxFysVAsJqSisAgBgCIJZwDKABhv4GcrJ03wAAD+0CS2fo6iHsiNtjKOJTNZTchOQNp8xmpVpAJwAA=="
+    "aspectRatio": 1.7817
   },
   "services/digital-transformation": {
     "widths": [
@@ -286,8 +234,7 @@
     ],
     "width": 1600,
     "height": 1067,
-    "aspectRatio": 1.4995,
-    "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAACwAwCdASoYABAAPxFwsFAsJiSisAgBgCIJYgDE2BwlFwJ3yWKEAAD4o1dzqPwQ9vTSXw1njGEt4RLS3xmlFl+/iKw35mdy4wqGrZN2iPxOrkrDFWQH0VTKCOdNHpLddoM4sMNSmMNgevo578S63sQ3XQts2Mh2NyQS9apA9v4AAA=="
+    "aspectRatio": 1.4995
   },
   "services/ecommerce": {
     "widths": [
@@ -298,8 +245,7 @@
     ],
     "width": 2400,
     "height": 1600,
-    "aspectRatio": 1.5,
-    "lqip": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAABwBACdASoYABAAPxFysFAsJqSisAgBgCIJQBOkHMhjGbkexDGkpL2de4eQAAD+15By9AOLyXhwmnRx1FOV0lLMNzMUl0lmO4Y6QkWyo3qCYcfiVCVaPhKg913IKjM7lb2Hht5ssmqpe+Wg1FzYb14HijYzPzxqB1VPCSLrD21NhKXRm1MRMA65TYeAAA=="
+    "aspectRatio": 1.5
   },
   "services/industry-solutions": {
     "widths": [
@@ -309,8 +255,7 @@
     ],
     "width": 1600,
     "height": 1067,
-    "aspectRatio": 1.4995,
-    "lqip": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAABQBACdASoYABAAPxFysFAsJqSisAgBgCIJYwCdAYxOtb/LeAo8cN6dDygAAP5lWglG4iTY+uq/2065fZ9dS9DiR0I7nL754Gsr97tHp7Y/scz/DGGnR6Kubk5vHVzOKfz1DgsyLO1EMdftWgcp8l4cZoU9eLIQ4Lw4qosJ1H4W3iK93dRWHOfants51IAA"
+    "aspectRatio": 1.4995
   },
   "services/mobile-app": {
     "widths": [
@@ -321,8 +266,7 @@
     ],
     "width": 2400,
     "height": 1800,
-    "aspectRatio": 1.3333,
-    "lqip": "data:image/webp;base64,UklGRs4AAABXRUJQVlA4IMIAAACwBQCdASoYABIAPxF4uFMsJyWiqAqpgCIJYwDMWY0McRcrgydcw4VDcNM7YFTzgi6XYMnNlWAA/ucgIwRTdXSo0x6WTCNRKav/ud2bHNgsr5GDuKcbEQ/AMznzbNupJ23ePefxbdddQyPi5Pre8OYD2pCUmyjddnlg/Gt3HxvDpxr5GJ0KYYP8oPlHmDGjaw2uiKU36Ql4G4unTnGvJuFaqAR/bpWFbct9oj+pC8/OM25uWfbV1fWWNrV87+cowUuqAA=="
+    "aspectRatio": 1.3333
   },
   "services/mvp-development": {
     "widths": [
@@ -333,8 +277,7 @@
     ],
     "width": 2400,
     "height": 1600,
-    "aspectRatio": 1.5,
-    "lqip": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAADwAwCdASoYABAAPxFysFAsJqSisAgBgCIJQBibA9jJH6KKlVimE9NwAP7lIusslifaeK1ZMd0SRDiPYuKlfdYIG/CJq1+MLnws4IXPMLKzy4p+MsdMt78wakyjrDU+hS4tgkz48zCDi0OkIZptt5zCa75sWA3VoOd5wAAA"
+    "aspectRatio": 1.5
   },
   "services/software-development": {
     "widths": [
@@ -345,8 +288,7 @@
     ],
     "width": 2400,
     "height": 1600,
-    "aspectRatio": 1.5,
-    "lqip": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAACwAwCdASoYABAAPxFysFAsJqSisAgBgCIJQBOgBD0mU/h2jlZQoAD+6+PWewkp8vyN9J52FYt65yrwkTF8Q1cj030UTnQhQ5n/oQAA"
+    "aspectRatio": 1.5
   },
   "services/website-development": {
     "widths": [
@@ -357,7 +299,6 @@
     ],
     "width": 2400,
     "height": 1386,
-    "aspectRatio": 1.7316,
-    "lqip": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAACwAwCdASoYAA4APxFysFAsJqSisAgBgCIJQAAJgvhR15lrNtcGAAD+g0Wcz5OLntMw/UYa0KONBZgrV5qyfW9NaDJPK+CluCJafUkrJ99fpAPA5oUXbMpisY3N2PtK/ujI06EfiIDlg3dGsfWC5bFVxDs82W1vFeB8Uido+2eH+VQlq6gAAA=="
+    "aspectRatio": 1.7316
   }
 }

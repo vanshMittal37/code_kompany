@@ -10,7 +10,6 @@ import styles from './ImageBlock.module.css';
 
 export default function HeroPicture({ className = '' }) {
   const [hasError, setHasError] = useState(false);
-  const [isLoaded, setIsLoaded] = useState(false);
 
   const desktopEntry = heroDark;
   const mobileEntry  = heroMobileDark;
@@ -26,16 +25,6 @@ export default function HeroPicture({ className = '' }) {
         />
       ) : (
         <>
-          {desktopEntry.lqip && (
-            <div
-              className={styles.lqip}
-              style={{
-                backgroundImage: `url(${desktopEntry.lqip})`,
-                opacity: isLoaded ? 0 : 1,
-              }}
-              aria-hidden="true"
-            />
-          )}
           <picture className={styles.imageWrap}>
             {/* Mobile portrait image under 700px */}
             <source
@@ -55,9 +44,8 @@ export default function HeroPicture({ className = '' }) {
               loading="eager"
               fetchPriority="high"
               decoding="sync"
-              onLoad={() => setIsLoaded(true)}
               onError={() => setHasError(true)}
-              className={`${styles.img} ${isLoaded ? styles.loaded : styles.loading}`}
+              className={styles.img}
               style={{ objectPosition: desktopEntry.focal || '50% 50%' }}
             />
           </picture>

@@ -22,7 +22,6 @@ export default function ImageBlock({
   ...props
 }) {
   const [hasError, setHasError] = useState(false);
-  const [isLoaded, setIsLoaded] = useState(false);
   const reducedMotion = useReducedMotion();
 
   const entry = getImage(imageKey);
@@ -71,19 +70,7 @@ export default function ImageBlock({
         />
       ) : (
         <>
-          {/* Blur-up LQIP background */}
-          {entry.lqip && (
-            <div
-              className={styles.lqip}
-              style={{
-                backgroundImage: `url(${entry.lqip})`,
-                opacity: isLoaded ? 0 : 1,
-              }}
-              aria-hidden="true"
-            />
-          )}
-
-          {/* Main responsive image */}
+          {/* Main responsive image — shown as soon as the browser has it, no blur/fade-in */}
           <div
             ref={parallax ? parallaxRef : undefined}
             className={[
@@ -102,14 +89,8 @@ export default function ImageBlock({
               loading={priority ? 'eager' : 'lazy'}
               fetchPriority={priority ? 'high' : 'auto'}
               decoding={priority ? 'sync' : 'async'}
-              onLoad={() => setIsLoaded(true)}
               onError={() => setHasError(true)}
-              className={[
-                styles.img,
-                isLoaded ? styles.loaded : styles.loading,
-              ]
-                .filter(Boolean)
-                .join(' ')}
+              className={styles.img}
               style={{ objectPosition: entry.focal || '50% 50%' }}
             />
           </div>

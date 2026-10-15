@@ -38,18 +38,6 @@
   border: 1px solid var(--border);
 }
 
-/* Blur-up LQIP background */
-.lqip {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  filter: blur(20px);
-  transform: scale(1.1);
-  z-index: 1;
-  transition: opacity 500ms var(--ease);
-}
-
 /* Image Wrapper */
 .imageWrap {
   position: absolute;
@@ -83,12 +71,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  opacity: 0;
-  transition: opacity 600ms var(--ease), transform 800ms var(--ease);
-}
-
-.loaded {
-  opacity: 1;
+  transition: transform 800ms var(--ease);
 }
 
 /* Overlay gradient */
@@ -117,7 +100,6 @@
     transition: none !important;
   }
   .img {
-    opacity: 1 !important;
     transition: none !important;
   }
 }

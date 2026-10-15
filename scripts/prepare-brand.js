@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const src = 'public/images/loggo.jpeg';
+const src = 'brand-source/logo-original.jpeg';
 const rawDest = 'raw-images/brand/logo-original.jpeg';
 const publicBrand = 'public/brand';
 

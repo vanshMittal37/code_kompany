@@ -70,7 +70,6 @@ export default function DevImages() {
                     <span className={styles.tag}>focal: {entry.focal}</span>
                   )}
                   <span className={styles.tag}>fallback: {entry.fallback}</span>
-                  {entry.lqip && <span className={styles.tag}>✓ LQIP</span>}
                 </div>
               </div>
             </article>

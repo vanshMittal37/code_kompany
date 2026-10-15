@@ -55,15 +55,15 @@ async function main() {
   const H = meta.height;
 
   // Find exact gap between mark and wordmark by analyzing row pixel data
-  const rawPixelData = await sharp(fullTrimmedBuffer).raw().toBuffer();
-  
-  // Image is 4 channels (RGBA). Count dark pixels per row.
+  // Read as single-channel greyscale so the pixel stride is always 1
+  // (the thresholded PNG is 3-channel, so assuming RGBA misread rows and cut through "KO").
+  const rawPixelData = await sharp(fullTrimmedBuffer).greyscale().raw().toBuffer();
+
+  // Count dark pixels per row.
   const rowDarkCount = new Array(H).fill(0);
   for (let y = 0; y < H; y++) {
     for (let x = 0; x < W; x++) {
-      const idx = (y * W + x) * 4;
-      const r = rawPixelData[idx], g = rawPixelData[idx+1], b = rawPixelData[idx+2];
-      if (r < 100 && g < 100 && b < 100) {
+      if (rawPixelData[y * W + x] < 100) {
         rowDarkCount[y]++;
       }
     }
@@ -87,29 +87,19 @@ async function main() {
   console.log('✓ Created public/brand/logo-full.svg');
 
   // 2. Mark only ({ CO / KO }) - top to gapY
-  const markBuffer = await sharp(fullTrimmedBuffer)
+  // extract and trim in separate passes: sharp applies trim before extract within one pipeline
+  const markCrop = await sharp(fullTrimmedBuffer)
     .extract({ left: 0, top: 0, width: W, height: gapY })
-    .trim()
     .png()
     .toBuffer();
+  const markBuffer = await sharp(markCrop).trim().png().toBuffer();
 
   const markSvgRaw = await traceImage(markBuffer, { color: '#000000' });
   const markSvg = cleanSvg(markSvgRaw, 'currentColor');
   fs.writeFileSync(path.join(BRAND_DIR, 'logo-mark.svg'), markSvg);
   console.log('✓ Created public/brand/logo-mark.svg');
 
-  // 3. Wordmark only ("CODE KOMPANY") - gapY to bottom
-  const wordHeight = meta.height - gapY;
-  const wordmarkBuffer = await sharp(fullTrimmedBuffer)
-    .extract({ left: 0, top: gapY, width: W, height: wordHeight })
-    .trim()
-    .png()
-    .toBuffer();
-
-  const wordmarkSvgRaw = await traceImage(wordmarkBuffer, { color: '#000000' });
-  const wordmarkSvg = cleanSvg(wordmarkSvgRaw, 'currentColor');
-  fs.writeFileSync(path.join(BRAND_DIR, 'logo-wordmark.svg'), wordmarkSvg);
-  console.log('✓ Created public/brand/logo-wordmark.svg');
+  // 3. (No separate wordmark file — the site renders "CODE KOMPANY" as live text in Logo.jsx)
 
   // 4. Create PNG versions for JSON-LD, Manifest & App Icons
   const logo512Canvas = await sharp({

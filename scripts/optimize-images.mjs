@@ -2,7 +2,8 @@
 /**
  * optimize-images.mjs
  * Processes all raw images from /raw-images/ into responsive .webp sets
- * and generates an images.generated.json manifest with LQIP placeholders.
+ * and generates an images.generated.json manifest (dimensions).
+ * Folders in SKIP_DIRS hold sources for other scripts (make-logo, make-og) and are not published.
  *
  * Usage: npm run images
  */
@@ -19,7 +20,8 @@ const WIDTHS      = [640, 1024, 1600, 2400];
 const QUALITY     = 78;
 const QUALITY_MIN = 70;
 const TARGET_KB   = { 1600: 250, 1024: 120 };
-const LQIP_W      = 24;
+// brand/ feeds make-logo, og/ feeds make-og — neither is served as a site image
+const SKIP_DIRS   = new Set(['brand', 'og']);
 
 /* ── helpers ─────────────────────────────────────────────── */
 async function ensureDir(dir) {
@@ -36,18 +38,13 @@ async function findRawImages(dir, results = []) {
   }
   for (const e of entries) {
     if (e.isDirectory()) {
+      if (dir === RAW_DIR && SKIP_DIRS.has(e.name)) continue;
       await findRawImages(path.join(dir, e.name), results);
     } else if (/\.(png|jpe?g|webp)$/i.test(e.name) && !e.name.startsWith('_')) {
       results.push(path.join(dir, e.name));
     }
   }
   return results;
-}
-
-/** Generate a base64 LQIP placeholder */
-async function makeLqip(img) {
-  const buf = await img.clone().resize(LQIP_W).webp({ quality: 30 }).toBuffer();
-  return `data:image/webp;base64,${buf.toString('base64')}`;
 }
 
 /** Try to encode at a given quality; return null if over target KB */
@@ -105,9 +102,6 @@ for (const rawPath of rawFiles) {
   const applicableWidths = WIDTHS.filter(w => w <= origW);
   if (applicableWidths.length === 0) applicableWidths.push(origW);
 
-  // Generate LQIP
-  const lqip = await makeLqip(img);
-
   const createdWidths = [];
   const rowSizes = {};
 
@@ -151,7 +145,6 @@ for (const rawPath of rawFiles) {
     width:       origW,
     height:      origH,
     aspectRatio,
-    lqip,
   };
 
   summary.push({

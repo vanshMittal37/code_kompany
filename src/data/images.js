@@ -2,7 +2,7 @@
  * images.js — Central image manifest for Code Kompany.
  *
  * Every component gets images ONLY from this file.
- * Generated dimensions + LQIP come from images.generated.json (created by `npm run images`).
+ * Generated dimensions come from images.generated.json (created by `npm run images`).
  * Alt text, focal points and fallback names are curated here by hand.
  *
  * To replace an image: put a new file in /raw-images/<folder>/, then run `npm run images`.
@@ -10,7 +10,7 @@
  * To change alt text or focal points: edit this file only.
  */
 
-// Auto-generated data (dimensions + LQIP). Created by `npm run images`.
+// Auto-generated data (dimensions). Created by `npm run images`.
 // Falls back to empty object if the file doesn't exist yet (before first image run).
 import generatedRaw from './images.generated.json';
 const generated = generatedRaw ?? {};
@@ -29,7 +29,6 @@ function entry(rawKey, meta) {
     width:       gen.width       ?? null,
     height:      gen.height      ?? null,
     aspectRatio: gen.aspectRatio ?? null,
-    lqip:        gen.lqip        ?? null,
     alt:         meta.alt,
     focal:       meta.focal      ?? '50% 50%',
     fallback:    meta.fallback   ?? 'gradient-dark',
@@ -114,19 +113,6 @@ export const ctaRibbon = entry('cta/cta-ribbon', {
 export const introWide = entry('intro/intro-wide', {
   alt: 'Close-up of Python source code on a monitor',
   focal: '50% 50%',
-  fallback: 'gradient-dark',
-});
-
-// ── 404 (not currently rendered — NotFound uses GenerativeVisual) ────────────
-export const notFound = entry('cta/not-found', {
-  alt: 'Dark minimalist studio workspace — representing page not found',
-  fallback: 'gradient-dark',
-});
-
-// ── OG background ────────────────────────────────────────────────────────────
-export const ogBg = entry('og/og-bg', {
-  alt: 'Minimal dark workspace at night with a desk lamp and monitor',
-  focal: '70% 50%',
   fallback: 'gradient-dark',
 });
 
@@ -221,7 +207,7 @@ export const allImages = {
   heroDark, heroMobileDark,
   aiAgents, softwareDevelopment, websiteDevelopment, mobileApp, cloudSolutions,
   digitalTransformation, mvpDevelopment, ecommerce, industrySolutions,
-  aiCoreWide, ctaRibbon, introWide, notFound, ogBg,
+  aiCoreWide, ctaRibbon, introWide,
   project01, project02, project03, project04, project05, project06,
   industryManufacturing, industryHealthcare, industryRealEstate,
   industryEcommerce, industryStartups, industryGrowingBusiness,

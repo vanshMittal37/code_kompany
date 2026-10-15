@@ -108,7 +108,6 @@ export default function About() {
                 ratio="4/3"
                 hoverZoom
                 framed="auto"
-                alt="Code Kompany studio environment"
               />
             </Reveal>
 
@@ -165,7 +164,6 @@ export default function About() {
           overlay
           parallax
           framed="never"
-          alt="Abstract representation of AI-native engineering philosophy"
           className={styles.mindsetImage}
         />
         <div className={`container ${styles.mindsetOverlay}`}>

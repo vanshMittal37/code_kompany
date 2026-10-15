@@ -61,10 +61,6 @@
   transition: color 300ms var(--ease), -webkit-text-stroke 300ms var(--ease);
 }
 
-:root[data-theme="light"] .numText {
-  -webkit-text-stroke: 1.5px var(--foreground);
-}
-
 @media (hover: hover) and (pointer: fine) {
   .itemCard:hover {
     border-top-color: var(--accent);

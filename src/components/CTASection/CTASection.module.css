@@ -32,10 +32,6 @@
   z-index: 2;
 }
 
-:root[data-theme="light"] .extraOverlay {
-  background: radial-gradient(circle at center, rgba(244, 242, 236, 0.5) 0%, rgba(244, 242, 236, 0.92) 100%);
-}
-
 .contentContainer {
   position: relative;
   z-index: 3;

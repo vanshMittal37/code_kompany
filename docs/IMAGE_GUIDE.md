@@ -1,10 +1,27 @@
 # Code Kompany — Image Guide & Art Direction
 
-> Re-read this guide before generating, replacing or adding any image to the project.
+> Re-read this guide before replacing or adding any image to the project.
 
 ---
 
-## House Style
+## Current Policy (October 2026) — real photography, not AI renders
+
+The site's AI-generated images have been replaced with licensed photography from Unsplash
+(Unsplash License: free for commercial use). Every source, photographer and page link is
+recorded in `scripts/image-sources.json`.
+
+- Prefer, in order: genuine Code Kompany photos and project screenshots → licensed stock photography. Do not generate new AI images.
+- Pick images for what the section says, not for mood alone. Avoid robots, holograms, neon "AI" art and 3D renders. Some Unsplash contributors post renders, so check before using.
+- Never present stock imagery as the company's team, studio, clients or delivered work. Alt text describes what the photo shows.
+- Project covers are illustrative placeholders while `status: 'placeholder'`. Swap in real screenshots when each case study is published.
+- Avoid visible third-party brand logos or recognisable branded apps on screens.
+- Keep the subject inside the middle ~60% and set `focal` in `src/data/images.js`. Each image is cropped to 21:9, 16:9, 4:3, 4:5 and 1:1.
+
+Still needed from the company: real studio and team photos (`about/studio`, `about/mindset`) and real project screenshots (`projects/*`).
+
+---
+
+## House Style (historical — original AI-render art direction, no longer used)
 
 Append the following text verbatim to EVERY image prompt (except hero-light, which has a noted modification):
 
@@ -92,9 +109,11 @@ Append the following text verbatim to EVERY image prompt (except hero-light, whi
 
 ## How to Replace an Image
 
-1. Put a new file with the SAME name in `/raw-images/<folder>/`
-2. Run `npm run images`
-3. If alt text or focal point changes, edit `/src/data/images.js`
+1. Stock photo: update its entry in `scripts/image-sources.json`, then run `node scripts/fetch-images.mjs`.
+   This downloads into `/raw-images/` and keeps any older source as `_<name>.<ext>`, which the pipeline skips.
+   Own photo: put the file with the SAME name in `/raw-images/<folder>/` and keep only one extension for that name.
+2. Run `npm run images` (and `npm run og` if `og/og-bg` changed)
+3. Update alt text and focal point in `/src/data/images.js`
 
 ## How to Add a New Image
 

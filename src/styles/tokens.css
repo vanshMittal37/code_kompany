@@ -15,9 +15,10 @@
 }
 
 /* --------------------------------------------------------------------------
-   Dark theme (default)
+   Theme (dark only)
    -------------------------------------------------------------------------- */
-:root[data-theme="dark"] {
+:root {
+  color-scheme: dark;
   --background:      #0B0B0C;
   --surface:         #111113;
   --card:            #161618;
@@ -27,27 +28,6 @@
   --border-strong:   rgba(255, 255, 255, 0.18);
   --image-overlay:   linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.6));
   --shadow:          0 30px 80px -40px rgba(0, 0, 0, 0.8);
-
-  /* Buttons */
-  --btn-primary-bg:      var(--foreground);
-  --btn-primary-fg:      var(--background);
-  --btn-secondary-bg:    transparent;
-  --btn-secondary-border: var(--border-strong);
-}
-
-/* --------------------------------------------------------------------------
-   Light theme (intentionally warm paper-gallery, NOT just inverted dark)
-   -------------------------------------------------------------------------- */
-:root[data-theme="light"] {
-  --background:      #F4F2EC;
-  --surface:         #FBFAF7;
-  --card:            #FFFFFF;
-  --foreground:      #141414;
-  --muted:           #66645E;
-  --border:          rgba(20, 20, 20, 0.10);
-  --border-strong:   rgba(20, 20, 20, 0.22);
-  --image-overlay:   linear-gradient(180deg, transparent 55%, rgba(0, 0, 0, 0.45));
-  --shadow:          0 30px 70px -45px rgba(20, 20, 20, 0.35);
 
   /* Buttons */
   --btn-primary-bg:      var(--foreground);

@@ -3,7 +3,6 @@ import { Link, NavLink } from 'react-router-dom';
 import { wordmark, navigation } from '../../config/site';
 import { useScroll } from '../../hooks/useScroll';
 import { useMediaQuery, DESKTOP_BREAK } from '../../hooks/useMediaQuery';
-import ThemeToggle from '../ThemeToggle/ThemeToggle';
 import Button from '../Button/Button';
 import MobileMenu from '../MobileMenu/MobileMenu';
 import Logo from '../Logo/Logo';
@@ -40,10 +39,8 @@ export default function Navbar() {
             linkToHome
           />
 
-          {/* Right Side: ThemeToggle -> Desktop Nav (Services, Projects, About) -> Start a Project */}
+          {/* Right Side: Desktop Nav (Services, Projects, About) -> Start a Project */}
           <div className={styles.actions}>
-            <ThemeToggle />
-
             {isDesktop && (
               <nav className={styles.desktopNav} aria-label="Main navigation">
                 <ul className={styles.navList}>

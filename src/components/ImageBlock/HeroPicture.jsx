@@ -1,10 +1,7 @@
 import { useState } from 'react';
-import { useTheme } from '../../hooks/useTheme';
 import {
   heroDark,
-  heroLight,
   heroMobileDark,
-  heroMobileLight,
   buildSrcSet,
   getSrc,
 } from '../../data/images';
@@ -12,12 +9,11 @@ import GenerativeVisual from '../GenerativeVisual/GenerativeVisual';
 import styles from './ImageBlock.module.css';
 
 export default function HeroPicture({ className = '' }) {
-  const { theme } = useTheme();
   const [hasError, setHasError] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
 
-  const desktopEntry = theme === 'light' ? heroLight : heroDark;
-  const mobileEntry  = theme === 'light' ? heroMobileLight : heroMobileDark;
+  const desktopEntry = heroDark;
+  const mobileEntry  = heroMobileDark;
 
   const showFallback = hasError || !desktopEntry || !desktopEntry.widths?.length;
 

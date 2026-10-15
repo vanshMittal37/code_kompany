@@ -12,7 +12,9 @@ import { readFileSync, existsSync } from 'fs';
 import { writeFile } from 'fs/promises';
 import path from 'path';
 
-const OG_SRC = path.join('raw-images', 'og', 'og-bg.png');
+const OG_SRC = ['png', 'jpg', 'jpeg', 'webp']
+  .map((ext) => path.join('raw-images', 'og', `og-bg.${ext}`))
+  .find((p) => existsSync(p)) ?? path.join('raw-images', 'og', 'og-bg.png');
 const OG_OUT = path.join('public', 'og-image.png');
 const LOGO_SRC = path.join('public', 'brand', 'logo-full.svg');
 const W = 1200, H = 630;

@@ -18,17 +18,10 @@
 
 /*
   logoImg: the raw <img> pointing to a black-on-transparent SVG.
-  In light mode → the black logo looks correct.
-  In dark mode  → invert() flips it to white so it reads on dark backgrounds.
+  invert() flips it to white so it reads on the dark background.
 */
 .logoImg {
   display: block;
-  /* Switch black SVG to white in dark mode */
-  filter: invert(0);
-  transition: filter var(--dur-fast) var(--ease);
-}
-
-:global(:root[data-theme="dark"]) .logoImg {
   filter: invert(1);
 }
 

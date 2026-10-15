@@ -38,12 +38,6 @@
   border: 1px solid var(--border);
 }
 
-:root[data-theme="light"] .framedAuto {
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow);
-  border: 1px solid var(--border);
-}
-
 /* Blur-up LQIP background */
 .lqip {
   position: absolute;

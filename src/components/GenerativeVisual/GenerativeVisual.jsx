@@ -2,7 +2,7 @@ import styles from './GenerativeVisual.module.css';
 
 /**
  * GenerativeVisual — SVG abstract fallback visuals when images are missing or fail to load.
- * Variants match house style: dark field (or paper field in light theme via CSS tokens),
+ * Variants match house style: dark field,
  * thin geometric lines, glowing nodes, signal-orange (#FF5A1F) accent.
  */
 export default function GenerativeVisual({

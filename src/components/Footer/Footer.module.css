@@ -132,10 +132,6 @@
   -webkit-text-stroke: 1px color-mix(in srgb, var(--foreground) 25%, transparent);
 }
 
-:root[data-theme="light"] .giantWordmark {
-  -webkit-text-stroke: 1px color-mix(in srgb, var(--foreground) 30%, transparent);
-}
-
 /* Bottom Bar */
 .bottomBar {
   display: flex;
